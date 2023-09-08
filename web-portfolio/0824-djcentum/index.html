@@ -563,6 +563,8 @@
         <script src="js/swiper-bundle.js"></script>
         <script src="js/jquery-3.7.1.min.js"></script>
         <script>
+            const mediaQueryList = window.matchMedia('(max-width: 600px)');
+
             var swiper = new Swiper('.mySwiper', {
                 // mousewheel: true,
                 slidesPerView: 2, //한번에 보이는 slide 개수
