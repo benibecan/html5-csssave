@@ -27,7 +27,7 @@
         <header class="nav-down" id="nav">
             <div class="menu">
                 <ul>
-                    <a href="#"><img style="width: 9rem" src="images/logo.png" alt="logo" /></a>
+                    <a href="#"><img src="images/logo.png" alt="logo" /></a>
                     <li>
                         <ul>
                             <li><a href="#">센텀소개</a></li>
@@ -37,6 +37,17 @@
                             <li><a href="#">공지사항</a></li>
                         </ul>
                     </li>
+
+                    <input type="button" id="minimenu" onclick="toggle()" />
+                </ul>
+            </div>
+            <div id="minilnb">
+                <ul>
+                    <li><a href="#">센텀소개</a></li>
+                    <li><a href="#">이용안내</a></li>
+                    <li><a href="#">정형외과</a></li>
+                    <li><a href="#">센텀동정</a></li>
+                    <li><a href="#">공지사항</a></li>
                 </ul>
             </div>
             <div class="submenu">
@@ -564,11 +575,12 @@
                 },
 
                 autoplay: {
-                    delay: 3000, //넘어가는 속도
+                    delay: 3500, //넘어가는 속도
                     disableOnInteraction: false,
                     pauseOnMouseEnter: true, //마우스 올리면 움직임 멈춤
                 },
             });
+
             // 배너
             var swiper = new Swiper('.mySwiper2', {
                 mousewheel: true,

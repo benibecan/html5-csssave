@@ -1,9 +1,4 @@
 @charset "utf-8";
-
-@font-face {
-    font-family: Pretendard;
-    src: url(webfonts.css) format('woff');
-}
 * {
     margin: 0;
     padding: 0;
@@ -16,12 +11,14 @@ a {
     color: #111;
 }
 body {
+    min-height: 100vh;
     width: 100%;
     font-family: Pretendard, 'Noto Sans KR', sans-serif;
     font-size: 1.6rem;
     font-weight: 400;
     color: #111;
     overflow-x: hidden;
+    box-sizing: border-box, content-box;
 }
 html {
     font-size: 62.5%;
@@ -37,7 +34,11 @@ html {
     position: fixed;
     bottom: 0.5rem;
     right: 0.5rem;
-    z-index: 10;
+    z-index: 20;
+}
+.pop img {
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.753) 0px 0px 4px;
 }
 /* ▲ pop ▲ */
 #nav {
@@ -53,32 +54,73 @@ html {
 }
 /* ▲ 휠반응 헤더 ▲ */
 header {
+    width: 100%;
     position: relative;
     background: #fff;
     border-bottom: 0.5rem solid rgba(100, 100, 100, 0.1);
     z-index: 1;
 }
+header .menu #minimenu {
+    display: none;
+    width: 10rem;
+    height: 100%;
+    cursor: pointer;
+    box-sizing: border-box;
+    border: none;
+    background: url(../images/menu.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#minilnb {
+    visibility: hidden;
+    position: absolute;
+    width: 100%;
+    top: 11.5rem;
+    z-index: 15;
+    border-bottom: 0.5rem solid rgb(233, 233, 233);
+    transition: 0.1s;
+}
+
+#minilnb > ul > li > a {
+    display: block;
+    width: 100%;
+    line-height: 6rem;
+    text-align: center;
+    background: #fff;
+    z-index: 10;
+}
 header .menu {
     width: 100%;
     margin: 0 auto;
+    position: relative;
 }
-header .menu ul {
-    display: flex;
+header .menu > ul {
+    width: 100%;
+    height: 100%;
     height: 11rem;
+    display: flex;
     justify-content: space-between;
     align-items: center;
 }
-header .menu ul > a {
-    margin-left: 3.2rem;
+header .menu > ul > a {
+    width: 10rem;
+    height: 100%;
+    margin-left: 5.2rem;
+}
+header .menu > ul > a > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 header .menu > ul > li {
-    width: 80%;
+    width: 100%;
+    margin-left: 3.2rem;
 }
-header .menu > ul > li > ul {
+header .menu ul li ul {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
-header .menu > ul > li > ul > li {
+header .menu ul li ul li {
     flex: 1 1 20%;
     text-align: center;
     line-height: 11rem;
@@ -90,6 +132,14 @@ header .menu ul li a {
     height: 100%;
     font-size: 2rem;
     font-weight: 600;
+}
+header .menu ul li:nth-child(1) a {
+    padding-left: 15%;
+    box-sizing: border-box;
+}
+header .menu ul li:nth-child(5) a {
+    padding-right: 15%;
+    box-sizing: border-box;
 }
 header .menu ul li a:hover::after,
 header .menu ul li a.active::after {
@@ -153,6 +203,7 @@ header .submenu .lnb > ul > li {
     display: flex;
     flex-direction: column;
     gap: 3.2rem;
+    box-sizing: border-box;
 }
 
 header .submenu .lnb > ul > li:first-child {
@@ -168,6 +219,7 @@ header .submenu .lnb > ul > li > ul > li:nth-child(2) {
 header .submenu .lnb > ul > li:nth-child(1) {
     border-left: none;
     padding-left: 3.2rem;
+    box-sizing: border-box;
 }
 header .submenu .lnb > ul > li:nth-child(2) {
     font-size: 1.8rem;
@@ -189,6 +241,7 @@ header .submenu .lnb > ul > li a:hover {
     text-align: left;
     padding-left: 10%;
     cursor: pointer;
+    box-sizing: border-box;
 }
 .lnb_button > button::after {
     position: absolute;
@@ -289,18 +342,21 @@ section.second {
     width: 100%;
     height: 80rem;
     margin-top: 2rem;
+    overflow: hidden;
+    z-index: 0;
 }
 
 .swiper2 > .swiper-wrapper > .swiper-slide {
     width: 100%;
     height: 100%;
-    border-radius: 20px;
     text-align: center;
     font-size: 18px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 0;
+    padding: 0 3.2rem;
+    box-sizing: border-box;
 }
 
 .swiper-slide img {
@@ -316,8 +372,7 @@ section.second {
     line-height: 100px;
     transform: scale(1.5);
     transform-origin: center;
-
-    z-index: 9;
+    z-index: 2;
 }
 .swiper-button-prev {
     position: absolute;
@@ -325,6 +380,7 @@ section.second {
     width: 27px;
     height: 43px;
     background: url(../images/btns.png);
+    box-sizing: border-box;
 }
 .swiper-button-next {
     position: absolute;
@@ -333,28 +389,36 @@ section.second {
     height: 43px;
     background: url(../images/btns.png);
     background-position: -30px 0;
+    box-sizing: border-box;
 }
 
 /* ▲  슬라이드 ▲ */
 .third,
 .fourth {
     width: 100%;
+    height: 100%;
+    transition: 0.5s;
 }
 .third > .wrap,
 .fourth > .wrap {
-    /* width: 120rem; */
-    /* height: 36.3rem; */
     width: 100%;
-    max-height: 40rem;
+    height: 40rem;
     display: flex;
     margin: 6.4rem auto;
     gap: 3.2rem;
     padding: 0 3.2rem;
     box-sizing: border-box;
+    transition: 0.5s;
+}
+.third h2,
+.fourth h2 {
+    margin-bottom: 2.4rem;
+    box-sizing: border-box;
+    font-size: 4.2rem;
 }
 .photo {
-    width: 50%;
-    max-height: 40rem;
+    width: 100%;
+    height: 100%;
     border-radius: 0.5rem;
     overflow: hidden;
 }
@@ -363,7 +427,7 @@ section.second {
     top: 0;
     transform: scale(1.1);
 }
-.photo img {
+.photo > img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -372,13 +436,16 @@ section.second {
 .txt {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 100%;
+    height: 100%;
     max-height: 40rem;
     justify-content: space-between;
 }
 .txt p {
     line-height: 2.6rem;
+    width: fit-content;
 }
+
 /* ▲  section third ▲ */
 button {
     margin: 2rem;
@@ -398,6 +465,7 @@ button > span {
     transition: all 0.3s ease;
     position: relative;
     display: inline-block;
+    box-sizing: border-box;
 }
 .btn-3 {
     line-height: 5.9rem;
@@ -467,15 +535,16 @@ section.fifth {
     width: 100%;
     padding: 6.4rem 0;
     background: rgb(247, 247, 247) 50%;
+    box-sizing: border-box;
 }
 section.fifth .frame {
     width: 100%;
     height: 100%;
     display: flex;
     flex-wrap: wrap;
-    gap: 3.2rem;
-    padding: 0 3.2rem;
+    padding: 3.2rem;
     margin: 3.2rem auto;
+    gap: 1.6rem;
     box-sizing: border-box;
 }
 section.fifth .frame .square__wrap {
@@ -484,13 +553,14 @@ section.fifth .frame .square__wrap {
     height: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1.6rem;
 }
 section.fifth .frame .square__wrap .square {
     position: relative;
     width: 100%;
-    height: 27.6rem;
-    /* background: rgba(100, 100, 100, 0.1); */
+    height: 44.575rem;
+    max-height: 100%;
     background: #b2def0;
     overflow: hidden;
     border-radius: 0.5rem;
@@ -500,7 +570,7 @@ section.fifth .frame .square__wrap .square img {
     bottom: 0;
     width: 100%;
     height: 95%;
-    object-position: top;
+    object-position: center top;
     object-fit: cover;
 }
 section.fifth .frame .square__wrap p {
@@ -523,6 +593,7 @@ section.sixth .hover {
     height: 100%;
     margin: 6.4rem auto;
     padding: 3.2rem;
+    box-sizing: border-box;
 }
 section.sixth .hover img {
     width: 100%;
@@ -569,11 +640,13 @@ section.seventh {
 }
 section.seventh > .container {
     padding: 0 3.2rem;
+    box-sizing: border-box;
 }
 section.seventh > .container > .wrap {
     width: 100%;
     margin: 0 auto;
     padding: 6.4rem 0 1.6rem 0;
+    box-sizing: border-box;
 }
 section.seventh::before {
     position: absolute;
@@ -592,6 +665,7 @@ section.seventh h1 {
     width: 100%;
     height: 30rem;
     margin-bottom: 6.4rem;
+    box-sizing: border-box;
 }
 .swiper-slide {
     width: 55.2rem;
@@ -652,18 +726,25 @@ footer .container {
     padding: 3.2rem;
     box-sizing: border-box;
 }
+footer .logo {
+    width: 10rem;
+    height: 100%;
+    text-align: center;
+}
 footer .logo img {
+    width: 100%;
     object-fit: contain;
     object-position: center;
 }
 footer .wrap {
-    height: 25rem;
-    width: 100%;
+    font-size: 1.3rem;
+    height: 100%;
+    width: 70%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-    padding-left: 3.2rem;
+    box-sizing: border-box;
 }
 footer a,
 footer li {
@@ -693,7 +774,6 @@ footer li {
     width: 100%;
 }
 /* footer  */
-
 @media screen and (max-width: 1599px) {
     header {
         width: 100%;
@@ -704,6 +784,24 @@ footer li {
     }
     footer {
         width: 100%;
+    }
+    section.fifth .frame .square__wrap .square {
+        height: 36.75rem;
+    }
+}
+@media screen and (max-width: 1499px) {
+    header {
+        width: 100%;
+        height: 11rem;
+    }
+    #content {
+        width: 100%;
+    }
+    footer {
+        width: 100%;
+    }
+    section.fifth .frame .square__wrap .square {
+        height: 34.25rem;
     }
 }
 
@@ -718,37 +816,217 @@ footer li {
     footer {
         width: 100%;
     }
+    section.fifth .frame .square__wrap .square {
+        height: 28.75rem;
+    }
 }
 @media screen and (max-width: 1023px) {
     header {
         width: 100%;
         height: 11rem;
     }
-    .menu > ul > a {
-        margin-left: 3.2rem;
-    }
+
     #content {
         width: 100%;
-    }
-    section.third {
-        /* width: 40%; */
     }
     footer {
         width: 100%;
     }
+    section.fifth .frame .square__wrap .square {
+        height: 22.35rem;
+    }
 }
 @media screen and (max-width: 779px) {
-    h2 {
-        margin-bottom: 20px;
+    header {
+        width: 100%;
+        height: 11rem;
     }
+    #content {
+        width: 100%;
+    }
+    footer {
+        width: 100%;
+    }
+
     .lnb_button > button {
         width: 10rem;
     }
     .lnb_button > button::after {
         right: 10%;
     }
+    section.fifth .frame .square__wrap .square {
+        height: 16.25rem;
+    }
+
+    footer .footmenu_r {
+        display: none;
+    }
 }
 @media screen and (max-width: 639px) {
+    header {
+        width: 100%;
+        height: 11rem;
+    }
+    #content {
+        width: 100%;
+    }
+    footer {
+        width: 100%;
+    }
+    .swiper2 {
+        height: 50rem;
+        transition: 1s;
+    }
+    header .menu #minimenu {
+        display: block;
+    }
+    header .menu ul li {
+        display: none;
+    }
+    header .menu > ul > a {
+        margin-left: 3.2rem;
+    }
+    .third h2,
+    .fourth h2 {
+        margin-bottom: 1rem;
+    }
+    .third > .wrap,
+    .fourth > .wrap {
+        height: 90rem;
+    }
+    .third > .wrap {
+        flex-direction: column;
+    }
+    .fourth > .wrap {
+        flex-direction: column-reverse;
+    }
+
+    section.fifth .frame .square__wrap {
+        flex: 1 1 40%;
+    }
+    section.fifth .frame .square__wrap .square {
+        height: 27.1rem;
+    }
+    footer .container {
+        justify-content: left;
+    }
+    .footmenu_l {
+        width: 100%;
+        justify-content: left;
+    }
+    footer .logo {
+        display: none;
+    }
+    footer .wrap {
+        width: 100%;
+        padding: 0;
+    }
+    footer .footmenu_r {
+        display: none;
+    }
 }
 @media screen and (max-width: 479px) {
+    header .menu #minimenu {
+        display: block;
+    }
+    .third h2,
+    .fourth h2 {
+        margin-bottom: 1rem;
+    }
+    .third > .wrap,
+    .fourth > .wrap {
+        height: 80rem;
+    }
+    header {
+        width: 100%;
+        height: 11rem;
+    }
+    #content {
+        width: 100%;
+    }
+    footer {
+        width: 100%;
+    }
+    section.first header a {
+        display: none;
+    }
+    footer .container {
+        justify-content: left;
+    }
+    .footmenu_l {
+        width: 100%;
+        justify-content: left;
+    }
+    footer .logo {
+        display: none;
+    }
+    footer .wrap {
+        width: 100%;
+        padding: 0;
+    }
+    footer .footmenu_r {
+        display: none;
+    }
+}
+@media screen and (max-width: 412px) {
+    header .menu #minimenu {
+        display: block;
+    }
+    .menu > ul {
+        justify-content: space-between;
+    }
+
+    .third h2,
+    .fourth h2 {
+        margin-bottom: 1rem;
+    }
+    h1.title {
+        font-size: 4.8rem;
+    }
+    .swiper2 {
+        height: 40rem;
+    }
+    .swiper2 > .swiper-wrapper > .swiper-slide {
+        padding: 0 1.8rem;
+    }
+    .third > .wrap,
+    .fourth > .wrap {
+        padding: 0 1.8rem;
+    }
+
+    section.fifth {
+        padding-bottom: 32px;
+    }
+    section.fifth .frame {
+        padding: 1.8rem;
+    }
+    section.fifth .frame .square__wrap .square {
+        height: 16.6rem;
+    }
+
+    section.sixth .hover {
+        margin: 3.2rem auto;
+        padding: 1.8rem;
+    }
+    section.seventh > .container {
+        padding: 0 1.8rem;
+    }
+
+    footer .container {
+        justify-content: left;
+    }
+    .footmenu_l {
+        width: 100%;
+        justify-content: left;
+    }
+    footer .logo {
+        display: none;
+    }
+    footer .wrap {
+        width: 100%;
+        padding: 0;
+    }
+    footer .footmenu_r {
+        display: none;
+    }
 }
