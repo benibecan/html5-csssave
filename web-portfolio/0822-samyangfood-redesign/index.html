@@ -3,13 +3,15 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./css/style.css" type="text/css" />
+        <link rel="stylesheet" href="css/swaper-bundle.css" />
+        <script src="js/jquery-3.7.1.min.js"></script>
+        <script src="js/swiper-bundle.js"></script>
         <link rel="stylesheet" href="./css/fonts.css" type="text/css" />
+        <link rel="stylesheet" href="./css/style.css" type="text/css" />
         <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,0"
         />
-
         <title>Document</title>
     </head>
     <body>
@@ -54,9 +56,27 @@
                             <div class="icon_menu">
                                 <a href="#"><span class="material-symbols-outlined">person</span></a>
                             </div>
-                            <div class="switch_btn">
-                                <div class="switch_btn__left"><a href="#">삼양몰</a></div>
-                                <div class="switch_btn__right"><a href="#">삼양식품</a></div>
+                            <div class="containerr">
+                                <div class="switches-container">
+                                    <input type="radio" id="switchMonthly" name="switchPlan" value="Monthly" />
+                                    <input
+                                        type="radio"
+                                        id="switchYearly"
+                                        name="switchPlan"
+                                        value="Yearly"
+                                        checked="checked"
+                                    />
+                                    <label for="switchMonthly"
+                                        ><a href="javascript:link()" target="_blank">삼양몰</a></label
+                                    >
+                                    <label for="switchYearly">삼양식품</label>
+                                    <div class="switch-wrapper">
+                                        <div class="switch">
+                                            <div>삼양몰</div>
+                                            <div>삼양식품</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </nav>
@@ -91,6 +111,9 @@
                                 <div class="square_3 long">
                                     <img src="./images/introduction3.png" alt="" />
                                 </div>
+                                <div class="square_2">
+                                    <img src="./images/introduction2.png" alt="" />
+                                </div>
                             </div>
                             <div class="introduction__left__line_2">
                                 <div class="square_1 long">
@@ -100,6 +123,9 @@
                                     <img src="./images/introduction4.jpg" alt="" />
                                 </div>
                                 <div class="square_3 long">
+                                    <img src="./images/introduction4.jpg" alt="" />
+                                </div>
+                                <div class="square_2">
                                     <img src="./images/introduction4.jpg" alt="" />
                                 </div>
                             </div>
@@ -134,6 +160,9 @@
                                 <div class="square_3 long">
                                     <img src="./images/introduction3.png" alt="" />
                                 </div>
+                                <div class="square_2">
+                                    <img src="./images/introduction2.png" alt="" />
+                                </div>
                             </div>
                             <div class="management__right__line_2">
                                 <div class="square_1 long">
@@ -143,6 +172,9 @@
                                     <img src="./images/introduction4.jpg" alt="" />
                                 </div>
                                 <div class="square_3 long">
+                                    <img src="./images/introduction4.jpg" alt="" />
+                                </div>
+                                <div class="square_2">
                                     <img src="./images/introduction4.jpg" alt="" />
                                 </div>
                             </div>
@@ -198,9 +230,9 @@
                             </div>
                         </div>
                         <div class="community_contents wrap">
-                            <div class="community_contents__wrap rolling-list">
-                                <ul>
-                                    <li class="community_contents_box">
+                            <div class="community_contents__wrap swiper mySwiper">
+                                <ul class="swiper-wrapper">
+                                    <li class="community_contents_box swiper-slide">
                                         <div class="community_contents_box_top image-wrap">
                                             <img src="images/promotion_photo_1.jpg" alt="promotion_photo_1" />
                                         </div>
@@ -209,7 +241,7 @@
                                             <strong>삼양식품 사회공헌활동<br />'맛있는 나눔' Vol.88</strong>
                                         </div>
                                     </li>
-                                    <li class="community_contents_box">
+                                    <li class="community_contents_box swiper-slide">
                                         <div class="community_contents_box_top image-wrap">
                                             <iframe
                                                 width="100%"
@@ -226,7 +258,7 @@
                                             <strong>삼양식품 사회공헌활동<br />'맛있는 나눔' Vol.88</strong>
                                         </div>
                                     </li>
-                                    <li class="community_contents_box">
+                                    <li class="community_contents_box swiper-slide">
                                         <div class="community_contents_box_top image-wrap">
                                             <img src="images/promotion_photo_2.jpg" alt="promotion_photo_2" />
                                         </div>
@@ -235,7 +267,7 @@
                                             <strong>삼양식품 사회공헌활동<br />'맛있는 나눔' Vol.88</strong>
                                         </div>
                                     </li>
-                                    <li class="community_contents_box">
+                                    <li class="community_contents_box swiper-slide">
                                         <div class="community_contents_box_top image-wrap">
                                             <img src="images/promotion_photo_3.jpg" alt="promotion_photo_3" />
                                         </div>
@@ -244,7 +276,7 @@
                                             <strong>삼양식품 사회공헌활동<br />'맛있는 나눔' Vol.88</strong>
                                         </div>
                                     </li>
-                                    <li class="community_contents_box">
+                                    <li class="community_contents_box swiper-slide">
                                         <div class="community_contents_box_top image-wrap">
                                             <img src="images/promotion_photo_4.jpg" alt="promotion_photo_4" />
                                         </div>
@@ -253,7 +285,7 @@
                                             <strong>삼양식품 사회공헌활동<br />'맛있는 나눔' Vol.88</strong>
                                         </div>
                                     </li>
-                                    <li class="community_contents_box">
+                                    <li class="community_contents_box swiper-slide">
                                         <div class="community_contents_box_top image-wrap">
                                             <img src="images/promotion_photo_5.jpg" alt="promotion_photo_5" />
                                         </div>
@@ -262,7 +294,7 @@
                                             <strong>삼양식품 사회공헌활동<br />'맛있는 나눔' Vol.88</strong>
                                         </div>
                                     </li>
-                                    <li class="community_contents_box">
+                                    <li class="community_contents_box swiper-slide">
                                         <div class="community_contents_box_top image-wrap">
                                             <iframe
                                                 width="100%"
@@ -279,7 +311,7 @@
                                             <strong>삼양식품 사회공헌활동<br />'맛있는 나눔' Vol.88</strong>
                                         </div>
                                     </li>
-                                    <li class="community_contents_box">
+                                    <li class="community_contents_box swiper-slide">
                                         <div class="community_contents_box_top image-wrap">
                                             <img src="images/promotion_photo_6.jpg" alt="promotion_photo_6" />
                                         </div>
@@ -737,7 +769,21 @@
                 </div>
             </div>
         </footer>
-
+        <script>
+            var swiper = new Swiper('.mySwiper', {
+                width: '100%',
+                speed: 3000,
+                loop: true,
+                loopedSlides: 3,
+                spaceBetween: 0,
+                slidesPerView: 'auto',
+                //centeredSlides: true,
+                autoplay: {
+                    delay: 0,
+                    disableOnInteraction: false,
+                },
+            });
+        </script>
         <script src="js/btn.js"></script>
     </body>
 </html>

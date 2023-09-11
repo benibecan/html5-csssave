@@ -1,9 +1,9 @@
-let prod = document.querySelectorAll('.product_box>div>div');
+let prod = document.querySelectorAll('.product_box__inner');
 
 for (let i = 0; i < 5; i++) {
-    prod[i].style.opacity = '0';
+    prod[i].style.display = 'none';
 }
-prod[0].style.opacity = '1';
+prod[0].style.display = 'flex';
 
 let prodMenu = document.querySelectorAll('.product_icon a');
 prodMenu.forEach(function (item, keys) {
@@ -16,11 +16,12 @@ prodMenu.forEach(function (item, keys) {
         }
         let otherItems = Array.from(prod).filter(others);
         otherItems.forEach(function (item) {
-            item.style.opacity = '0';
+            item.style.display = 'none';
         });
-        prod[j].style.opacity = '1';
+        prod[j].style.display = 'flex';
     };
 });
+
 // ▲ product클릭 이벤트
 
 document.querySelector('.switch_btn__left').addEventListener('click', (c) => {

@@ -2,6 +2,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 ul {
     list-style: none;
@@ -11,39 +12,135 @@ a {
     color: #111;
 }
 body {
+    width: 100vw;
     font-family: Pretendard, 'Noto Sans KR', sans-serif;
     font-weight: 400;
     color: #111;
     overflow-x: hidden;
 }
+
 h1 {
     font-size: 48px;
     font-weight: 600;
 }
+
 /* ▲ 기본셋팅 end ▲ */
+
+:root {
+    --switches-bg-color: #ccc;
+    --switches-label-color: #111;
+    --switch-bg-color: #ff6400;
+    --switch-text-color: #fff;
+}
+
+.switches-container {
+    width: 15rem;
+    position: relative;
+    display: flex;
+    padding: 0;
+    position: relative;
+    background: var(--switches-bg-color);
+    line-height: 3rem;
+    border-radius: 3rem;
+    margin-left: auto;
+    margin-right: 24px;
+}
+
+/* input (radio) for toggling. hidden - use labels for clicking on */
+.switches-container input {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+}
+
+/* labels for the input (radio) boxes - something to click on */
+.switches-container label {
+    width: 50%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--switches-label-color);
+}
+
+/* switch highlighters wrapper (sliding left / right) 
+    - need wrapper to enable the even margins around the highlight box
+*/
+.switch-wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    z-index: 3;
+    transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    /* transition: transform 1s; */
+}
+
+/* switch box highlighter */
+.switch {
+    border-radius: 3rem;
+    background: var(--switch-bg-color);
+    height: 100%;
+}
+
+/* switch box labels
+    - default setup
+    - toggle afterwards based on radio:checked status 
+*/
+.switch div {
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    display: block;
+    color: var(--switch-text-color);
+    transition: opacity 0.2s cubic-bezier(0.77, 0, 0.175, 1) 0.125s;
+    will-change: opacity;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* slide the switch box from right to left */
+.switches-container input:nth-of-type(1):checked ~ .switch-wrapper {
+    transform: translateX(0%);
+}
+
+/* slide the switch box from left to right */
+.switches-container input:nth-of-type(2):checked ~ .switch-wrapper {
+    transform: translateX(100%);
+}
+
+/* toggle the switch box labels - first checkbox:checked - show first switch div */
+.switches-container input:nth-of-type(1):checked ~ .switch-wrapper .switch div:nth-of-type(1) {
+    opacity: 1;
+}
+
+/* toggle the switch box labels - second checkbox:checked - show second switch div */
+.switches-container input:nth-of-type(2):checked ~ .switch-wrapper .switch div:nth-of-type(2) {
+    opacity: 1;
+}
+/* ▲ test2 end ▲ */
 header {
     position: fixed;
-    width: 100%;
-    top: 0;
+    width: 1280px;
+    top: 1%;
+    left: 50%;
+    transform: translateX(-50%);
     height: 80px;
     /* background: #f5b335; */
     transition: top 0.2s ease-in-out;
     z-index: 999;
 }
+
 .nav-up {
     top: -80px;
 }
-/* main {
-    height: 5000px;
-} */
-header .header__wrap {
-    margin: 6px 0;
-}
+
 header .header__inner {
-    width: 1280px;
+    width: 100%;
     background: #fff;
     border-radius: 999px;
-    margin: 0 auto;
     overflow: hidden;
 }
 header .header__wrap nav {
@@ -69,21 +166,22 @@ header .header__wrap nav .nav__left .item {
     width: 100%;
     height: 100%;
     display: flex;
+    flex: 1 1 20%;
     align-items: center;
     justify-content: space-between;
 }
 header .header__wrap nav .nav__left .item__name {
     line-height: 76px;
 }
-header .header__wrap nav .nav__left .itemitem__name {
-    height: 100%;
-}
+
 header .header__wrap nav .nav__left .item .item__name .arrow {
     position: relative;
     padding-right: 43px;
+    box-sizing: border-box;
 }
 header .header__wrap nav .nav__left .item .item__name a {
     padding-right: 36px;
+    box-sizing: border-box;
 }
 
 header .header__wrap nav .nav__left .item .item__name:hover a {
@@ -104,6 +202,7 @@ header .header__wrap nav .nav__left .item .item__name:first-child .arrow {
     margin: 7px;
     top: 0;
     right: 22px;
+    box-sizing: border-box;
 }
 .item div .arrow:first-child:hover::after {
     position: absolute;
@@ -116,24 +215,20 @@ header .header__wrap nav .nav__left .item .item__name:first-child .arrow {
     border-right: 4px solid transparent;
     z-index: 999;
     margin: 7px;
+    box-sizing: border-box;
 }
 .int {
     position: relative;
 }
-.esg {
-    position: relative;
-}
-
 .item__contents {
     display: none;
 }
-
 .int:hover ~ .intc,
 .intc:hover {
     position: absolute;
     display: block;
     top: 70%;
-    left: 20%;
+    left: 80px;
     /* width: 170px; */
     /* height: 196px; */
     padding: 10px;
@@ -141,13 +236,17 @@ header .header__wrap nav .nav__left .item .item__name:first-child .arrow {
     text-align: center;
     border: 3px solid #000;
     border-radius: 20px;
+    box-sizing: border-box;
+}
+.esg {
+    position: relative;
 }
 .esg:hover ~ .esgc,
 .esgc:hover {
     position: absolute;
     display: block;
     top: 70%;
-    left: 26%;
+    left: 200px;
     /* width: 170px; */
     /* height: 196px; */
     padding: 10px;
@@ -155,6 +254,7 @@ header .header__wrap nav .nav__left .item .item__name:first-child .arrow {
     text-align: center;
     border: 3px solid #000;
     border-radius: 20px;
+    box-sizing: border-box;
 }
 header .header__wrap nav .nav__right {
     display: flex;
@@ -164,6 +264,7 @@ header .header__wrap nav .nav__right .icon_menu {
     justify-content: center;
     align-items: center;
     margin-right: 32px;
+    box-sizing: border-box;
 }
 
 header .header__wrap nav .nav__right .switch_btn {
@@ -171,16 +272,19 @@ header .header__wrap nav .nav__right .switch_btn {
     margin-right: 24px;
     background: #ddd;
     border-radius: 999px;
+    box-sizing: border-box;
 }
 header .header__wrap nav .nav__right .switch_btn .switch_btn__left {
     padding: 10px 14px 10px 24px;
     background: #ddd;
     border-radius: 999px;
+    box-sizing: border-box;
 }
 header .header__wrap nav .nav__right .switch_btn .switch_btn__right {
     padding: 10px 24px;
     background: #ff6400;
     border-radius: 999px;
+    box-sizing: border-box;
 }
 .contents__menu .inner li a {
     display: block;
@@ -212,7 +316,7 @@ header .header__wrap nav .nav__right .switch_btn .switch_btn__right {
 /* ▲ banner end ▲ */
 .introduction {
     width: 100%;
-    height: 600px;
+    height: 900px;
     margin: 0 auto;
     background: #ffe4d2;
 }
@@ -244,7 +348,7 @@ header .header__wrap nav .nav__right .switch_btn .switch_btn__right {
     left: 0;
 }
 .introduction__left .introduction__left__line_2 {
-    top: -35%;
+    top: -15%;
     left: 257.5px;
 }
 .introduction__left > div {
@@ -287,7 +391,7 @@ header .header__wrap nav .nav__right .switch_btn .switch_btn__right {
 /* ▲ introduction end ▲ */
 .management {
     width: 100%;
-    height: 600px;
+    height: 900px;
     margin: 0 auto;
     background: #d2ffdc;
 }
@@ -319,7 +423,7 @@ header .header__wrap nav .nav__right .switch_btn .switch_btn__right {
     left: 0;
 }
 .management__right .management__right__line_2 {
-    top: -35%;
+    top: -15%;
     left: 257.5px;
 }
 .management__right > div {
@@ -360,9 +464,30 @@ header .header__wrap nav .nav__right .switch_btn .switch_btn__right {
     background: #ff6400;
 }
 /* ▲ management end ▲ */
+.mySwiper {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.swiper-wrapper {
+    width: 100%;
+    left: 30%;
+    transition-timing-function: linear;
+    margin: 0 auto;
+}
+
+/* .swiper-slide:nth-child(odd) {
+    background: pink;
+}
+.swiper-slide:nth-child(even) {
+    background: #ccc;
+} */
+/* ▲ test end ▲ */
 .community {
     width: 100%;
     background: #f1f3f8;
+    margin: 0 auto;
+    padding-top: 42px;
 }
 .community__inner {
     padding-bottom: 72px;
@@ -396,6 +521,7 @@ header .header__wrap nav .nav__right .switch_btn .switch_btn__right {
     gap: 10px;
     padding: 4.5px 17px;
     cursor: pointer;
+    box-sizing: border-box;
 }
 .community_menu_item .community_icon {
     padding-top: 3px;
@@ -410,59 +536,28 @@ header .header__wrap nav .nav__right .switch_btn .switch_btn__right {
     color: #fff;
 }
 .community_contents {
-    width: 1920px;
     overflow: hidden;
     display: flex;
     margin: 30px auto;
+    box-sizing: border-box;
+}
+.community_contents__wrap {
+    box-sizing: border-box;
 }
 .community_contents__wrap ul {
     display: flex;
 }
-.rolling-list.original {
-    animation: rollingleft1 60s linear infinite;
-}
-.rolling-list.clone {
-    animation: rollingleft2 60s linear infinite;
-}
-
-@keyframes rollingleft1 {
-    0% {
-        transform: translateX(0);
-    }
-    50% {
-        transform: translateX(-100%);
-    }
-    50.01% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: translateX(0);
-    }
-}
-
-@keyframes rollingleft2 {
-    0% {
-        transition: translateX(0);
-    }
-    100% {
-        transform: translateX(-200%);
-    }
-}
 .community_contents_box {
-    /* width: 290px;
-    height: 338px; */
     width: 290px;
     height: 338px;
-    box-sizing: border-box;
     border-radius: 20px;
     margin: 0 6px;
     padding: 6px 6px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex-shrink: 0;
+    box-sizing: border-box;
 }
-
 .community_contents_box_top {
     width: 100%;
     height: 60%;
@@ -475,7 +570,6 @@ header .header__wrap nav .nav__right .switch_btn .switch_btn__right {
     object-fit: cover;
     object-position: center;
 }
-
 .community_contents_box_bottom {
     width: 100%;
     height: 40%;
@@ -489,11 +583,11 @@ header .header__wrap nav .nav__right .switch_btn .switch_btn__right {
     color: #767676;
     font-weight: 600;
     font-size: 13px;
+    box-sizing: border-box;
 }
 .community_contents_box_bottom > strong {
     font-weight: 500;
 }
-
 /* ▲ community end ▲ */
 .product {
     width: 100%;
@@ -636,8 +730,9 @@ header .header__wrap nav .nav__right .switch_btn .switch_btn__right {
     border-radius: 30px;
     text-align: center;
     gap: 10px;
+    box-sizing: border-box;
 }
-.product_box_contents:hover > li > img {
+ul.product_box_contents:hover img {
     transform: scale(1.1);
 }
 .product_box_contents_top {
@@ -647,6 +742,7 @@ header .header__wrap nav .nav__right .switch_btn .switch_btn__right {
     width: auto;
     height: 100%;
     object-fit: contain;
+    transition: 1s;
 }
 .product_box_contents p {
     padding-bottom: 2px;
