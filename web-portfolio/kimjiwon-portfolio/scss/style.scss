@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 ul {
     list-style: none;
@@ -9,134 +10,113 @@ a {
     text-decoration: none;
 }
 body {
-    font-family: 'KoPubWorld', 'notosans', '나눔고딕';
-    // overflow-x: hidden;
+    font-family: 'Pretendard', 'Montserrat', '나눔고딕', sans-serif;
+    font-size: 18px;
+    width: 100vw;
 }
-// 기본설정
+div.wrap {
+    height: 100%;
+    margin: 0 72px;
+}
+
+// 파랑 152692 흰색 F9F8F7 노랑 FFC908
+// 헤더입니다.
 header {
     position: fixed;
     left: 0;
     top: 0;
     width: 100%;
-    height: 80px;
-    background: #fff;
-    padding: 0 24px;
-    box-sizing: border-box;
-}
-header h1 {
-    text-indent: -9999px;
-    width: 180px;
-    height: 50px;
-    background: url(../images/logo.png);
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-header #gnb {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-}
-header #gnb ul {
-    display: flex;
-    align-items: center;
-}
-header #gnb li a {
-    display: block;
-    font-weight: bold;
-    padding: 0 8px;
-    line-height: 80px;
-}
-.snsSet {
-    position: absolute;
-    top: 50%;
-    right: 0%;
-    transform: translate(0%, -50%);
-}
-.snsSet ul li {
-    float: left;
-}
-//헤더
-#wrap {
-    width: 100vw;
+    height: 120px;
     margin: 0 auto;
-}
-.top {
-    height: 1000px;
-    background: tomato;
-}
-.content {
-    display: flex;
-    height: 400px;
-}
-.content .left {
-    width: 50vw;
-    height: 100%;
-    background: sandybrown;
-}
-.content .right {
-    width: 50vw;
-    height: 100%;
-    background: teal;
-}
-.content {
-    box-sizing: border-box;
-}
-// 콘텐츠
-.top h1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    font-weight: 400;
-    font-size: 64px;
-}
-//top
-.swiper {
-    width: 100%;
-    height: 800px;
-}
-.swiper-slide {
-    width: 50%;
-    height: 50%;
-    border-radius: 20px;
-    text-align: center;
-    font-size: 18px;
-    background: #ccc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.swiper-button-prev {
-    width: 27px;
-    height: 43px;
-    background: url(images/btns.png);
-}
-.swiper-button-next {
-    width: 27px;
-    height: 43px;
-    background: url(images/btns.png);
-    background-position: -30px 0;
-}
-// 슬라이더
-@media screen and (max-width: 500px) {
-    .content {
-        flex-direction: column;
+    color: #fff;
+    font-family: 'Montserrat';
+    z-index: 999;
+    a {
+        color: #fff;
     }
-    .content .left {
+    .gnb {
         width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
-    .content .right {
-        width: 100%;
+    .lnb {
+        display: flex;
+    }
+    .lnb > li {
+        padding: 20px 10px;
+    }
+    .triangle {
+        width: 0px;
+        height: 0px;
+        border-top: 9px solid #fff;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        transition: 0.2s;
+    }
+    .lnb > li:nth-child(2) {
+        position: relative;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    .lnb > li:nth-child(2) .lnbm {
+        position: absolute;
+        top: 70%;
+        text-align: center;
+        left: 0;
+        transition: 0.1s;
+        visibility: hidden;
+    }
+    .lnb > li:nth-child(2) .lnbm a {
+        display: block;
+        padding: 10px 0;
+    }
+    .lnb > li:nth-child(2):hover .lnbm,
+    .lnb > li:nth-child(2) .lnbm:hover {
+        visibility: visible;
+        top: 90%;
+    }
+    .lnb > li:nth-child(2):hover ul.triangle,
+    .lnb > li:nth-child(2) .lnbm:hover ul.triangle {
+        transform: rotate(180deg);
     }
 }
-// 미디어쿼리
+// 메인입니다
+main {
+    section:nth-child(1) {
+        position: relative;
+        width: 100%;
+        height: 1024px;
+        background: #152692;
+        margin: 0 auto;
+        ul {
+            position: absolute;
+            top: 45%;
+            left: 0;
+            width: 100%;
+            margin: 0 auto;
+            li {
+                position: absolute;
+                display: inline-block;
+                border: 1px solid #000;
+                font-family: 'Montserrat';
+                font-size: 164px;
+                font-weight: bold;
+                letter-spacing: -0.0375em;
+                color: #fff;
+            }
+            li:nth-child(2) {
+                position: absolute;
+                top: 50%;
+                left: 0;
+            }
+        }
+        div {
+            position: absolute;
+            top: 45%;
+            right: 0;
+        }
+    }
+}
