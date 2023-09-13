@@ -9,10 +9,12 @@ ul {
 a {
     text-decoration: none;
 }
-body {
+body,
+html {
     font-family: 'Pretendard', 'Montserrat', '나눔고딕', sans-serif;
-    font-size: 18px;
-    width: 100vw;
+    width: 100%;
+    background: #f9f8f7;
+    overflow-x: hidden;
 }
 div.wrap {
     height: 100%;
@@ -21,6 +23,7 @@ div.wrap {
 
 // 파랑 152692 흰색 F9F8F7 노랑 FFC908
 // 헤더입니다.
+
 header {
     position: fixed;
     left: 0;
@@ -28,11 +31,12 @@ header {
     width: 100%;
     height: 120px;
     margin: 0 auto;
-    color: #fff;
+    color: #152692;
     font-family: 'Montserrat';
+    font-size: 18px;
     z-index: 999;
     a {
-        color: #fff;
+        color: #152692;
     }
     .gnb {
         width: 100%;
@@ -46,11 +50,12 @@ header {
     }
     .lnb > li {
         padding: 20px 10px;
+        cursor: pointer;
     }
     .triangle {
         width: 0px;
         height: 0px;
-        border-top: 9px solid #fff;
+        border-top: 9px solid #152692;
         border-left: 6px solid transparent;
         border-right: 6px solid transparent;
         transition: 0.2s;
@@ -84,39 +89,196 @@ header {
     }
 }
 // 메인입니다
+section {
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid #000;
+    overflow: hidden;
+}
+div.container {
+    width: 100%;
+    height: 100%;
+    padding: 120px 72px;
+}
 main {
-    section:nth-child(1) {
-        position: relative;
-        width: 100%;
-        height: 1024px;
+    section:nth-child(1):has(.container > ul:hover) {
         background: #152692;
-        margin: 0 auto;
-        ul {
-            position: absolute;
-            top: 45%;
-            left: 0;
+    }
+    //섹션1입니다
+    section:nth-child(1) {
+        height: 1024px;
+        position: relative;
+        background: #f9f8f7;
+        transform: translateX(0%);
+        transition: 0.5s;
+        div.container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        ul.change {
+            position: relative;
             width: 100%;
-            margin: 0 auto;
+
             li {
-                position: absolute;
-                display: inline-block;
-                border: 1px solid #000;
-                font-family: 'Montserrat';
-                font-size: 164px;
-                font-weight: bold;
-                letter-spacing: -0.0375em;
-                color: #fff;
+                transition: 0.5s;
+            }
+            li:nth-child(1) {
+                color: #152692;
+                line-height: 160px;
+            }
+            li:nth-child(1),
+            li:nth-child(2) {
+                width: 100%;
+                height: 100%;
+                transform: translateX(0%);
+                h1 {
+                    display: block;
+                    font-family: 'Montserrat';
+                    font-size: 164px;
+                    font-weight: bold;
+                    letter-spacing: -0.0375em;
+                }
             }
             li:nth-child(2) {
                 position: absolute;
-                top: 50%;
+                top: 0;
                 left: 0;
+                // display: none;
+                color: #f9f8f7;
+                transform: translateX(130%);
+            }
+            li:nth-child(3) {
+                position: absolute;
+                width: 270px;
+                height: 270px;
+                left: 0;
+                bottom: 0;
+                transform: translateX(0%);
+                transition: 0.5s;
+                opacity: 0;
+                z-index: -1;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
             }
         }
-        div {
+        ul.change:hover li:nth-child(1) {
+            transform: translateX(-130%);
+        }
+        ul.change:hover li:nth-child(2) {
+            display: block;
+            transform: translateX(0%);
+        }
+        ul.change:hover li:nth-child(3) {
+            left: 70%;
+            opacity: 1;
+        }
+        .scroll-down {
             position: absolute;
-            top: 45%;
-            right: 0;
+            bottom: 10%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .scroll {
+                width: 2.5rem;
+                height: 4rem;
+                border: 2px solid #152692;
+                border-radius: 2rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .scroll span {
+                width: 0.5rem;
+                height: 0.5rem;
+                border-radius: 50%;
+                background: #152692;
+                display: block;
+                animation: cursor 1.15s linear infinite;
+            }
+
+            .arrow-down {
+                width: 0.7rem;
+                height: 0.7rem;
+                border: 2px solid transparent;
+                border-right-color: #152692;
+                border-bottom-color: #152692;
+                transform: rotate(45deg);
+                margin-top: 0.3rem;
+                animation: arrow 1.15s linear infinite;
+            }
+        }
+        @keyframes cursor {
+            0% {
+                opacity: 0;
+                transform: translateY(-1rem);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(1rem);
+            }
+        }
+
+        @keyframes arrow {
+            0% {
+                opacity: 0;
+            }
+            25% {
+                opacity: 0.25;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            75% {
+                opacity: 0.75;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    }
+    section:nth-child(2) {
+        div.container {
+            border: 1px solid #000;
+        }
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+
+            li.circle {
+                position: relative;
+                background: #ffc908;
+                border-radius: 999px;
+                padding: 2%;
+                div {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background: url(../images/photo_1.png);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+            }
+            li.circle:hover > div {
+                background: url(../images/photo_2.png);
+            }
+            li:nth-child(2) > ul {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+            }
         }
     }
 }
