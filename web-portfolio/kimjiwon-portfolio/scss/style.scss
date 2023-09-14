@@ -11,8 +11,9 @@ a {
 }
 body,
 html {
-    font-family: 'Pretendard', 'Montserrat', '나눔고딕', sans-serif;
+    font-family: 'Pretendard', 'Montserrat', 'Montagu Slab', '나눔고딕', sans-serif;
     width: 100%;
+    height: 100%;
     background: #f9f8f7;
     overflow-x: hidden;
 }
@@ -98,7 +99,7 @@ section {
 div.container {
     width: 100%;
     height: 100%;
-    padding: 120px 72px;
+    padding: 120px 120px;
 }
 main {
     section:nth-child(1):has(.container > ul:hover) {
@@ -126,12 +127,13 @@ main {
             }
             li:nth-child(1) {
                 color: #152692;
-                line-height: 160px;
             }
             li:nth-child(1),
             li:nth-child(2) {
                 width: 100%;
                 height: 100%;
+                line-height: 160px;
+
                 transform: translateX(0%);
                 h1 {
                     display: block;
@@ -145,7 +147,6 @@ main {
                 position: absolute;
                 top: 0;
                 left: 0;
-                // display: none;
                 color: #f9f8f7;
                 transform: translateX(130%);
             }
@@ -245,40 +246,220 @@ main {
             }
         }
     }
+
     section:nth-child(2) {
+        font-size: 18px;
+        height: 1024px;
         div.container {
             border: 1px solid #000;
         }
-        ul {
+        div.container > ul {
+            width: 100%;
+            height: 100%;
             display: flex;
             justify-content: center;
-            align-items: flex-start;
-
+            align-items: center;
+            gap: 120px;
+            > li {
+                flex: 1 1 30% 70%;
+            }
             li.circle {
                 position: relative;
+                width: 419px;
+                height: 419px;
                 background: #ffc908;
-                border-radius: 999px;
-                padding: 2%;
-                div {
-                    width: 100%;
-                    height: 100%;
+                border-radius: 100%;
+                h1 {
                     position: absolute;
                     top: 0;
-                    left: 0;
-                    background: url(../images/photo_1.png);
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    background-size: contain;
+                    right: -10%;
+                    font-family: 'MontaguSlab';
+                    font-size: 48px;
+                    text-align: right;
                 }
             }
-            li.circle:hover > div {
-                background: url(../images/photo_2.png);
+            li.circle > div:nth-child(1) {
+                width: 88%;
+                height: 88%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: url(../images/photo_1.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
             }
-            li:nth-child(2) > ul {
+            li.circle > div:nth-child(2) {
+                width: 88%;
+                height: 88%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-46%, -51%);
+                background: url(../images/photo_2.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                opacity: 0;
+            }
+            li.circle:hover > div:nth-child(1) {
+                opacity: 0;
+            }
+            li.circle:hover > div:nth-child(2) {
+                opacity: 1;
+            }
+            ul.txt {
                 width: 100%;
+                height: 100%;
                 display: flex;
                 flex-direction: column;
+                justify-content: space-between;
+                align-items: flex-start;
+                gap: 40px;
+                ul > li {
+                    padding-bottom: 20px;
+                }
+                li.btn {
+                    button {
+                        font-size: 18px;
+                        background: #000;
+                        color: #fff;
+                        padding: 10px 20px;
+                        border-radius: 999px;
+                        border: none;
+                        margin-bottom: 12px;
+                        line-height: 30px;
+                    }
+                    button:hover {
+                    }
+                }
             }
         }
     }
+    section:nth-child(3),
+    section:nth-child(4) {
+        width: 100%;
+        height: 100%;
+        div.container {
+            height: 100%;
+            text-align: center;
+            color: #152692;
+            div {
+                margin-bottom: 120px;
+                h1 {
+                    font-family: 'Montserrat';
+                    font-size: 96px;
+                    font-weight: bold;
+                }
+                p {
+                    font-family: 'Montserrat';
+                    font-size: 18px;
+                }
+            }
+            ul.box {
+                display: flex;
+                flex-wrap: wrap;
+                margin-bottom: 120px;
+                gap: 2px;
+            }
+            .box li {
+                position: relative;
+                flex: 1 1 30%;
+                height: auto;
+                overflow: hidden;
+                background: #d9d9d9;
+            }
+            img {
+                max-width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .box > li > ul > li:nth-child(2) {
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: 1;
+                display: none;
+            }
+
+            .box > li:hover > ul > li:nth-child(2) {
+                display: block;
+            }
+
+            button {
+                font-size: 18px;
+                background: #000;
+                color: #fff;
+                padding: 10px 20px;
+                border-radius: 999px;
+                border: none;
+            }
+        }
+    }
+    section:nth-child(5) {
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+        div.container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex: 1 1 50%;
+            gap: 78px;
+            > div {
+                border: 1px solid #000;
+            }
+            div.left {
+                position: relative;
+                width: 100%;
+                > img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+            }
+            div.right {
+                div.name {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding-bottom: 40px;
+                    h2 {
+                        font-size: 18px;
+                    }
+
+                    > div {
+                        display: flex;
+                        align-items: center;
+                        gap: 20px;
+
+                        > span {
+                            background: #000;
+                            border-radius: 999px;
+                            color: #fff;
+                            padding: 5px 15px;
+                            font-family: 'Montserrat';
+                            font-size: 12px;
+                        }
+                        > p {
+                            font-family: 'Montserrat';
+                            font-size: 18px;
+                        }
+                    }
+                }
+                div.ex {
+                    p {
+                        padding-bottom: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+div#bl {
+    height: 20000px;
 }

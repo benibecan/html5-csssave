@@ -1,0 +1,2 @@
+1. owl.carousel.js에서 navContainerClass: 'owl-nav' 검색
+2. 'owl-nav' 클래스명 변경

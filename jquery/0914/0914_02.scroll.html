@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <style>
+        :root {
+            --mask-size: 50px;
+            --mask-x: -25px;
+            --mask-y: -25px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 250px;
+        }
+        div.main {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+        div.main div.page {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            text-align: center;
+        }
+        div.main div.page div.inner {
+            position: relative;
+        }
+        div.main div.page div.innerCont {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        div.main div.page h2 {
+            font-size: 72px;
+            line-height: 1;
+        }
+        div.main div.page p {
+            font-size: 36px;
+            margin-top: 40px;
+        }
+        div.main div.page div.bgLayer {
+            background: url(images/main-img01.jpg) center/cover;
+            color: #fff;
+        }
+        div.main div.page div.cover {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(241deg, #f77706, #f5c45a);
+        }
+
+        div.main div.page div.maskLayer {
+            background: url(images/main-img01.jpg) center/cover;
+            color: #ffad25;
+        }
+    </style>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {});
+    </script>
+    <body>
+        <div class="main">
+            <div class="page">
+                <div class="innerCont bgLayer">
+                    <div class="cover"></div>
+                    <div class="inner bgLayer">
+                        <h2>Adopt Animals Adopt Family</h2>
+                        <p>포인핸드는 사지 않고 입양하는 문화를 만듭니다.</p>
+                    </div>
+                </div>
+                <div class="innerCont bgLayer">
+                    <div class="cover"></div>
+                    <div class="inner maskLayer">
+                        <h2>Adopt Animals Adopt Family</h2>
+                        <p>포인핸드는 사지 않고 입양하는 문화를 만듭니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

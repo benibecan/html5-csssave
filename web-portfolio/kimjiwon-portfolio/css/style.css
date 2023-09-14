@@ -15,8 +15,9 @@ a {
 
 body,
 html {
-  font-family: "Pretendard", "Montserrat", "나눔고딕", sans-serif;
+  font-family: "Pretendard", "Montserrat", "Montagu Slab", "나눔고딕", sans-serif;
   width: 100%;
+  height: 100%;
   background: #f9f8f7;
   overflow-x: hidden;
 }
@@ -101,7 +102,7 @@ section {
 div.container {
   width: 100%;
   height: 100%;
-  padding: 120px 72px;
+  padding: 120px 120px;
 }
 
 main section:nth-child(1):has(.container > ul:hover) {
@@ -129,12 +130,12 @@ main section:nth-child(1) ul.change li {
 }
 main section:nth-child(1) ul.change li:nth-child(1) {
   color: #152692;
-  line-height: 160px;
 }
 main section:nth-child(1) ul.change li:nth-child(1),
 main section:nth-child(1) ul.change li:nth-child(2) {
   width: 100%;
   height: 100%;
+  line-height: 160px;
   transform: translateX(0%);
 }
 main section:nth-child(1) ul.change li:nth-child(1) h1,
@@ -270,36 +271,217 @@ main section:nth-child(1) .scroll-down .arrow-down {
     opacity: 1;
   }
 }
+main section:nth-child(2) {
+  font-size: 18px;
+  height: 1024px;
+}
 main section:nth-child(2) div.container {
   border: 1px solid #000;
 }
-main section:nth-child(2) ul {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-main section:nth-child(2) ul li.circle {
-  position: relative;
-  background: #ffc908;
-  border-radius: 999px;
-  padding: 2%;
-}
-main section:nth-child(2) ul li.circle div {
+main section:nth-child(2) div.container > ul {
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 120px;
+}
+main section:nth-child(2) div.container > ul > li {
+  flex: 1 1 30% 70%;
+}
+main section:nth-child(2) div.container > ul li.circle {
+  position: relative;
+  width: 419px;
+  height: 419px;
+  background: #ffc908;
+  border-radius: 100%;
+}
+main section:nth-child(2) div.container > ul li.circle h1 {
   position: absolute;
   top: 0;
-  left: 0;
+  right: -10%;
+  font-family: "MontaguSlab";
+  font-size: 48px;
+  text-align: right;
+}
+main section:nth-child(2) div.container > ul li.circle > div:nth-child(1) {
+  width: 88%;
+  height: 88%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background: url(../images/photo_1.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
 }
-main section:nth-child(2) ul li.circle:hover > div {
+main section:nth-child(2) div.container > ul li.circle > div:nth-child(2) {
+  width: 88%;
+  height: 88%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-46%, -51%);
   background: url(../images/photo_2.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0;
 }
-main section:nth-child(2) ul li:nth-child(2) > ul {
+main section:nth-child(2) div.container > ul li.circle:hover > div:nth-child(1) {
+  opacity: 0;
+}
+main section:nth-child(2) div.container > ul li.circle:hover > div:nth-child(2) {
+  opacity: 1;
+}
+main section:nth-child(2) div.container > ul ul.txt {
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+main section:nth-child(2) div.container > ul ul.txt ul > li {
+  padding-bottom: 20px;
+}
+main section:nth-child(2) div.container > ul ul.txt li.btn button {
+  font-size: 18px;
+  background: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: none;
+  margin-bottom: 12px;
+  line-height: 30px;
+}
+main section:nth-child(3),
+main section:nth-child(4) {
+  width: 100%;
+  height: 100%;
+}
+main section:nth-child(3) div.container,
+main section:nth-child(4) div.container {
+  height: 100%;
+  text-align: center;
+  color: #152692;
+}
+main section:nth-child(3) div.container div,
+main section:nth-child(4) div.container div {
+  margin-bottom: 120px;
+}
+main section:nth-child(3) div.container div h1,
+main section:nth-child(4) div.container div h1 {
+  font-family: "Montserrat";
+  font-size: 96px;
+  font-weight: bold;
+}
+main section:nth-child(3) div.container div p,
+main section:nth-child(4) div.container div p {
+  font-family: "Montserrat";
+  font-size: 18px;
+}
+main section:nth-child(3) div.container ul.box,
+main section:nth-child(4) div.container ul.box {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 120px;
+  gap: 2px;
+}
+main section:nth-child(3) div.container .box li,
+main section:nth-child(4) div.container .box li {
+  position: relative;
+  flex: 1 1 30%;
+  height: auto;
+  overflow: hidden;
+  background: #d9d9d9;
+}
+main section:nth-child(3) div.container img,
+main section:nth-child(4) div.container img {
+  max-width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main section:nth-child(3) div.container .box > li > ul > li:nth-child(2),
+main section:nth-child(4) div.container .box > li > ul > li:nth-child(2) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  display: none;
+}
+main section:nth-child(3) div.container .box > li:hover > ul > li:nth-child(2),
+main section:nth-child(4) div.container .box > li:hover > ul > li:nth-child(2) {
+  display: block;
+}
+main section:nth-child(3) div.container button,
+main section:nth-child(4) div.container button {
+  font-size: 18px;
+  background: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: none;
+}
+main section:nth-child(5) img {
+  display: block;
+  width: 100%;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+main section:nth-child(5) div.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex: 1 1 50%;
+  gap: 78px;
+}
+main section:nth-child(5) div.container > div {
+  border: 1px solid #000;
+}
+main section:nth-child(5) div.container div.left {
+  position: relative;
+  width: 100%;
+}
+main section:nth-child(5) div.container div.left > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+main section:nth-child(5) div.container div.right div.name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 40px;
+}
+main section:nth-child(5) div.container div.right div.name h2 {
+  font-size: 18px;
+}
+main section:nth-child(5) div.container div.right div.name > div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+main section:nth-child(5) div.container div.right div.name > div > span {
+  background: #000;
+  border-radius: 999px;
+  color: #fff;
+  padding: 5px 15px;
+  font-family: "Montserrat";
+  font-size: 12px;
+}
+main section:nth-child(5) div.container div.right div.name > div > p {
+  font-family: "Montserrat";
+  font-size: 18px;
+}
+main section:nth-child(5) div.container div.right div.ex p {
+  padding-bottom: 20px;
+}
+
+div#bl {
+  height: 20000px;
 }
