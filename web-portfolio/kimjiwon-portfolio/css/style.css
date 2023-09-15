@@ -17,7 +17,7 @@ body,
 html {
   font-family: "Pretendard", "Montserrat", "Montagu Slab", "나눔고딕", sans-serif;
   width: 100%;
-  height: 100%;
+  height: auto;
   background: #f9f8f7;
   overflow-x: hidden;
 }
@@ -105,55 +105,55 @@ div.container {
   padding: 120px 120px;
 }
 
-main section:nth-child(1):has(.container > ul:hover) {
+main section#intro:has(.container > ul:hover) {
   background: #152692;
 }
-main section:nth-child(1) {
+main section#intro {
   height: 1024px;
   position: relative;
   background: #f9f8f7;
   transform: translateX(0%);
   transition: 0.5s;
 }
-main section:nth-child(1) div.container {
+main section#intro div.container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-main section:nth-child(1) ul.change {
+main section#intro ul.change {
   position: relative;
   width: 100%;
 }
-main section:nth-child(1) ul.change li {
+main section#intro ul.change li {
   transition: 0.5s;
 }
-main section:nth-child(1) ul.change li:nth-child(1) {
+main section#intro ul.change li:nth-child(1) {
   color: #152692;
 }
-main section:nth-child(1) ul.change li:nth-child(1),
-main section:nth-child(1) ul.change li:nth-child(2) {
+main section#intro ul.change li:nth-child(1),
+main section#intro ul.change li:nth-child(2) {
   width: 100%;
   height: 100%;
   line-height: 160px;
   transform: translateX(0%);
 }
-main section:nth-child(1) ul.change li:nth-child(1) h1,
-main section:nth-child(1) ul.change li:nth-child(2) h1 {
+main section#intro ul.change li:nth-child(1) h1,
+main section#intro ul.change li:nth-child(2) h1 {
   display: block;
   font-family: "Montserrat";
   font-size: 164px;
   font-weight: bold;
   letter-spacing: -0.0375em;
 }
-main section:nth-child(1) ul.change li:nth-child(2) {
+main section#intro ul.change li:nth-child(2) {
   position: absolute;
   top: 0;
   left: 0;
   color: #f9f8f7;
   transform: translateX(130%);
 }
-main section:nth-child(1) ul.change li:nth-child(3) {
+main section#intro ul.change li:nth-child(3) {
   position: absolute;
   width: 270px;
   height: 270px;
@@ -164,31 +164,31 @@ main section:nth-child(1) ul.change li:nth-child(3) {
   opacity: 0;
   z-index: -1;
 }
-main section:nth-child(1) ul.change img {
+main section#intro ul.change img {
   width: 100%;
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
 }
-main section:nth-child(1) ul.change:hover li:nth-child(1) {
+main section#intro ul.change:hover li:nth-child(1) {
   transform: translateX(-130%);
 }
-main section:nth-child(1) ul.change:hover li:nth-child(2) {
+main section#intro ul.change:hover li:nth-child(2) {
   display: block;
   transform: translateX(0%);
 }
-main section:nth-child(1) ul.change:hover li:nth-child(3) {
+main section#intro ul.change:hover li:nth-child(3) {
   left: 70%;
   opacity: 1;
 }
-main section:nth-child(1) .scroll-down {
+main section#intro .scroll-down {
   position: absolute;
   bottom: 10%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-main section:nth-child(1) .scroll-down .scroll {
+main section#intro .scroll-down .scroll {
   width: 2.5rem;
   height: 4rem;
   border: 2px solid #152692;
@@ -197,7 +197,7 @@ main section:nth-child(1) .scroll-down .scroll {
   justify-content: center;
   align-items: center;
 }
-main section:nth-child(1) .scroll-down .scroll span {
+main section#intro .scroll-down .scroll span {
   width: 0.5rem;
   height: 0.5rem;
   border-radius: 50%;
@@ -206,7 +206,7 @@ main section:nth-child(1) .scroll-down .scroll span {
   -webkit-animation: cursor 1.15s linear infinite;
           animation: cursor 1.15s linear infinite;
 }
-main section:nth-child(1) .scroll-down .arrow-down {
+main section#intro .scroll-down .arrow-down {
   width: 0.7rem;
   height: 0.7rem;
   border: 2px solid transparent;
@@ -271,14 +271,14 @@ main section:nth-child(1) .scroll-down .arrow-down {
     opacity: 1;
   }
 }
-main section:nth-child(2) {
+main section#aboutme {
   font-size: 18px;
   height: 1024px;
 }
-main section:nth-child(2) div.container {
+main section#aboutme div.container {
   border: 1px solid #000;
 }
-main section:nth-child(2) div.container > ul {
+main section#aboutme div.container > ul {
   width: 100%;
   height: 100%;
   display: flex;
@@ -286,17 +286,17 @@ main section:nth-child(2) div.container > ul {
   align-items: center;
   gap: 120px;
 }
-main section:nth-child(2) div.container > ul > li {
+main section#aboutme div.container > ul > li {
   flex: 1 1 30% 70%;
 }
-main section:nth-child(2) div.container > ul li.circle {
+main section#aboutme div.container > ul li.circle {
   position: relative;
   width: 419px;
   height: 419px;
   background: #ffc908;
   border-radius: 100%;
 }
-main section:nth-child(2) div.container > ul li.circle h1 {
+main section#aboutme div.container > ul li.circle h1 {
   position: absolute;
   top: 0;
   right: -10%;
@@ -304,38 +304,40 @@ main section:nth-child(2) div.container > ul li.circle h1 {
   font-size: 48px;
   text-align: right;
 }
-main section:nth-child(2) div.container > ul li.circle > div:nth-child(1) {
+main section#aboutme div.container > ul li.circle > div:nth-child(1) {
   width: 88%;
   height: 88%;
   position: absolute;
   top: 50%;
   left: 50%;
+  display: block;
   transform: translate(-50%, -50%);
   background: url(../images/photo_1.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
 }
-main section:nth-child(2) div.container > ul li.circle > div:nth-child(2) {
-  width: 88%;
-  height: 88%;
+main section#aboutme div.container > ul li.circle > div:nth-child(2) {
+  width: 87%;
+  height: 87%;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-46%, -51%);
+  transform: translate(-46%, -53%);
   background: url(../images/photo_2.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
   opacity: 0;
+  transition: 0.5s;
 }
-main section:nth-child(2) div.container > ul li.circle:hover > div:nth-child(1) {
-  opacity: 0;
+main section#aboutme div.container > ul li.circle:hover > div:nth-child(1) {
+  display: none;
 }
-main section:nth-child(2) div.container > ul li.circle:hover > div:nth-child(2) {
+main section#aboutme div.container > ul li.circle:hover > div:nth-child(2) {
   opacity: 1;
 }
-main section:nth-child(2) div.container > ul ul.txt {
+main section#aboutme div.container > ul ul.txt {
   width: 100%;
   height: 100%;
   display: flex;
@@ -344,81 +346,247 @@ main section:nth-child(2) div.container > ul ul.txt {
   align-items: flex-start;
   gap: 40px;
 }
-main section:nth-child(2) div.container > ul ul.txt ul > li {
+main section#aboutme div.container > ul ul.txt ul > li {
   padding-bottom: 20px;
 }
-main section:nth-child(2) div.container > ul ul.txt li.btn button {
+main section#aboutme div.container > ul ul.txt li.btn {
+  display: flex;
+  gap: 12px;
+}
+main section#aboutme div.container > ul ul.txt li.btn button {
   font-size: 18px;
   background: #000;
   color: #fff;
   padding: 10px 20px;
   border-radius: 999px;
   border: none;
-  margin-bottom: 12px;
   line-height: 30px;
+  cursor: pointer;
 }
-main section:nth-child(3),
-main section:nth-child(4) {
+main section#aboutme div.container > ul ul.txt li.btn button span {
+  display: inline-block;
+  line-height: 10px;
+}
+main section#aboutme div.container > ul ul.txt li.btn button:hover {
+  background: #152692;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+main section#aboutme div.container > ul ul.txt li.btn button:hover > span {
+  -webkit-animation-name: move;
+          animation-name: move;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+@-webkit-keyframes move {
+  0% {
+    transform: rotate(0);
+    scale: 1;
+  }
+  30% {
+    transform: rotate(15deg);
+    scale: 1.3;
+  }
+  100% {
+    transform: rotate(0);
+    scale: 1;
+  }
+}
+@keyframes move {
+  0% {
+    transform: rotate(0);
+    scale: 1;
+  }
+  30% {
+    transform: rotate(15deg);
+    scale: 1.3;
+  }
+  100% {
+    transform: rotate(0);
+    scale: 1;
+  }
+}
+main .modal {
+  display: block; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 999; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: hidden; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4);
+  /*
+   Fallback color */
+}
+main .modal .modal-content {
+  overflow: hidden;
+  position: relative;
+  background-color: #fefefe;
+  margin: 120px auto;
+  width: 85%;
+  height: 90%;
+  border-radius: 30px 30px 0 0;
+  text-align: center;
+  padding: 20px;
+}
+main .modal .modal-content h1 {
+  line-height: 70px;
+}
+main .modal .modal-content > div.close {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  background-color: #152692;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 50%;
+}
+main .modal .modal-content > div.close > span {
+  color: #fff;
+}
+main .modal .modal-content > div.close > span > span {
+  display: block;
+  width: 25px;
+  height: 5px;
+  background: #fff;
+  margin: 5px 0;
+  transition: transform 0.2s ease-in;
+  border-radius: 3px;
+}
+main .modal .modal-content > div.close > span .bar1 {
+  transform: translate(0, 5px) rotate(45deg);
+}
+main .modal .modal-content > div.close > span .bar2 {
+  transform: translate(0, -5px) rotate(-45deg);
+}
+main .modal .modal-content > div.close > div:hover .bar1 {
+  transform: translate(0, 5px) rotate(-50deg);
+}
+main .modal .modal-content > div.close > div:hover .bar2 {
+  transform: translate(0, -5px) rotate(-135deg);
+}
+main .modal .modal-content > div.labels label > input {
+  accent-color: #152692;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: 1px solid #999;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+main .modal .modal-content > div.labels input[type=checkbox]:checked {
+  background: gold;
+  border: none;
+}
+main .modal .modal-content > div.photo {
+  position: relative;
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+}
+main .modal .modal-content > div.photo > img {
+  position: absolute;
+  width: 20%;
+  height: auto;
+  filter: hue-rotate(-20deg);
+}
+main .modal .modal-content > div.photo > img:nth-child(1) {
+  bottom: 0;
+  left: 0;
+}
+main .modal .modal-content > div.photo > img:nth-child(2) {
+  top: 30%;
+  left: 10%;
+}
+main .modal .modal-content > div.photo > img:nth-child(3) {
+  top: 20%;
+  left: 20%;
+}
+main .modal .modal-content > div.photo > img:nth-child(4) {
+  top: 30%;
+  right: 30%;
+}
+main .modal .modal-content > div.photo > img:nth-child(5) {
+  top: 40%;
+  right: 10%;
+}
+main .modal .modal-content > div.photo > img:nth-child(6) {
+  top: 0%;
+  right: 20%;
+}
+main .modal .modal-content > div.photo > img:nth-child(7) {
+  top: 20%;
+  right: 0;
+}
+main section#web,
+main section#contents {
   width: 100%;
   height: 100%;
 }
-main section:nth-child(3) div.container,
-main section:nth-child(4) div.container {
+main section#web div.container,
+main section#contents div.container {
   height: 100%;
   text-align: center;
   color: #152692;
 }
-main section:nth-child(3) div.container div,
-main section:nth-child(4) div.container div {
+main section#web div.container div,
+main section#contents div.container div {
   margin-bottom: 120px;
 }
-main section:nth-child(3) div.container div h1,
-main section:nth-child(4) div.container div h1 {
+main section#web div.container div h1,
+main section#contents div.container div h1 {
+  display: inline-block;
   font-family: "Montserrat";
   font-size: 96px;
   font-weight: bold;
+  text-align: center;
 }
-main section:nth-child(3) div.container div p,
-main section:nth-child(4) div.container div p {
+main section#web div.container div p,
+main section#contents div.container div p {
   font-family: "Montserrat";
   font-size: 18px;
 }
-main section:nth-child(3) div.container ul.box,
-main section:nth-child(4) div.container ul.box {
+main section#web div.container ul.box,
+main section#contents div.container ul.box {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 120px;
   gap: 2px;
 }
-main section:nth-child(3) div.container .box li,
-main section:nth-child(4) div.container .box li {
+main section#web div.container .box li,
+main section#contents div.container .box li {
   position: relative;
   flex: 1 1 30%;
   height: auto;
   overflow: hidden;
   background: #d9d9d9;
 }
-main section:nth-child(3) div.container img,
-main section:nth-child(4) div.container img {
+main section#web div.container img,
+main section#contents div.container img {
   max-width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-main section:nth-child(3) div.container .box > li > ul > li:nth-child(2),
-main section:nth-child(4) div.container .box > li > ul > li:nth-child(2) {
+main section#web div.container .box > li > ul > li:nth-child(2),
+main section#contents div.container .box > li > ul > li:nth-child(2) {
   position: absolute;
   left: 0;
   top: 0;
   z-index: 1;
   display: none;
 }
-main section:nth-child(3) div.container .box > li:hover > ul > li:nth-child(2),
-main section:nth-child(4) div.container .box > li:hover > ul > li:nth-child(2) {
+main section#web div.container .box > li:hover > ul > li:nth-child(2),
+main section#contents div.container .box > li:hover > ul > li:nth-child(2) {
   display: block;
 }
-main section:nth-child(3) div.container button,
-main section:nth-child(4) div.container button {
+main section#web div.container button,
+main section#contents div.container button {
   font-size: 18px;
   background: #000;
   color: #fff;
@@ -426,47 +594,52 @@ main section:nth-child(4) div.container button {
   border-radius: 999px;
   border: none;
 }
-main section:nth-child(5) img {
+main section#web div.container button:hover,
+main section#contents div.container button:hover {
+  background: #152692;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+main section#works img {
   display: block;
   width: 100%;
   height: auto;
   -o-object-fit: contain;
      object-fit: contain;
 }
-main section:nth-child(5) div.container {
+main section#works div.container {
   width: 100%;
   height: 100%;
   display: flex;
   flex: 1 1 50%;
   gap: 78px;
 }
-main section:nth-child(5) div.container > div {
+main section#works div.container > div {
   border: 1px solid #000;
 }
-main section:nth-child(5) div.container div.left {
+main section#works div.container div.left {
   position: relative;
   width: 100%;
 }
-main section:nth-child(5) div.container div.left > img {
+main section#works div.container div.left > img {
   position: absolute;
   top: 0;
   left: 0;
 }
-main section:nth-child(5) div.container div.right div.name {
+main section#works div.container div.right div.name {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-bottom: 40px;
 }
-main section:nth-child(5) div.container div.right div.name h2 {
+main section#works div.container div.right div.name h2 {
   font-size: 18px;
 }
-main section:nth-child(5) div.container div.right div.name > div {
+main section#works div.container div.right div.name > div {
   display: flex;
   align-items: center;
   gap: 20px;
 }
-main section:nth-child(5) div.container div.right div.name > div > span {
+main section#works div.container div.right div.name > div > span {
   background: #000;
   border-radius: 999px;
   color: #fff;
@@ -474,14 +647,22 @@ main section:nth-child(5) div.container div.right div.name > div > span {
   font-family: "Montserrat";
   font-size: 12px;
 }
-main section:nth-child(5) div.container div.right div.name > div > p {
+main section#works div.container div.right div.name > div span:hover {
+  background: #152692;
+}
+main section#works div.container div.right div.name > div > p {
   font-family: "Montserrat";
   font-size: 18px;
 }
-main section:nth-child(5) div.container div.right div.ex p {
+main section#works div.container div.right div.ex p {
   padding-bottom: 20px;
 }
 
-div#bl {
-  height: 20000px;
+footer {
+  width: 100%;
+  text-align: center;
+}
+footer p {
+  font-size: 12px;
+  margin-bottom: 40px;
 }

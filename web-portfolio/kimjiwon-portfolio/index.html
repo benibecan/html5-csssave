@@ -37,22 +37,22 @@
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
         <meta name="theme-color" content="#ffffff" />
-        <title>Jiwon | Web Portfolio</title>
+        <title>JIWON | Web Portfolio</title>
     </head>
     <body>
         <header>
             <div class="wrap">
                 <ul class="gnb">
-                    <li><strong>Jiwon’s Web Portfolio</strong></li>
+                    <li><strong>JIWON Web Portfolio</strong></li>
                     <li>
                         <ul class="lnb">
-                            <li>About Me</li>
+                            <li><a href="#aboutme">About Me</a></li>
                             <li>
                                 Works
                                 <ul class="triangle"></ul>
                                 <ul class="lnbm">
-                                    <li><a href="#">Web</a></li>
-                                    <li><a href="#">Contents</a></li>
+                                    <li><a href="#web">Web</a></li>
+                                    <li><a href="#contents">Contents</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -62,7 +62,7 @@
         </header>
         <main>
             <!-- 섹션1 -->
-            <section>
+            <section id="intro">
                 <div class="container">
                     <ul class="change">
                         <li>
@@ -86,7 +86,7 @@
                 </div>
             </section>
             <!-- 섹션2 -->
-            <section>
+            <section id="aboutme">
                 <div class="container">
                     <ul>
                         <!-- 이모지 프로필 -->
@@ -133,17 +133,53 @@
                                     </ul>
                                 </li>
                                 <li class="btn">
-                                    <button type="button">만나서 반가워요 ! &#128075;</button>
-                                    <button type="button">경력사항 &#127793;</button>
-                                    <button type="button">똑똑 &#128236;</button>
+                                    <button class="hi" type="button">만나서 반가워요 ! <span>&#128075;</span></button>
+                                    <button class="job" type="button">경력사항 <span>&#127793;</span></button>
+                                    <button class="email" type="button">똑똑 <span>&#128236;</span></button>
                                 </li>
+                                <div class="btnup">
+                                    <div class="black"></div>
+                                    <div class="hi"></div>
+                                </div>
                             </ul>
                         </li>
                     </ul>
                 </div>
             </section>
+            <!-- The Modal -->
+            <div id="himodal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="close" onClick="close_pop();">
+                        <span class="pop_bt">
+                            <span class="bar1"></span>
+                            <span class="bar2"></span>
+                        </span>
+                    </div>
+                    <h1>저는 이런 사람이에요</h1>
+                    <br />
+                    <div class="labels">
+                        <label><input type="checkbox" name="check" color="#f00" value="travel" /> Background</label>
+                        <label><input type="checkbox" name="check" value="experience" /> Travel</label>
+                        <label><input type="checkbox" name="check" value="funstuff" /> Fun Stuff</label>
+                    </div>
+
+                    <div class="photo">
+                        <img src="images/baby.png" alt="" />
+                        <div></div>
+                        <img src="images/pohang.png" alt="" />
+                        <img src="images/sanghai.png" alt="" />
+                        <img src="images/taiwan.png" alt="" />
+                        <img src="images/gumamoto.png" alt="" />
+                        <img src="images/osaka.png" alt="" />
+                        <img src="images/hochimin.png" alt="" />
+                    </div>
+                    <p><br />내용 또</p>
+                </div>
+            </div>
+            <!--End Modal-->
             <!-- 섹션3 -->
-            <section>
+            <section id="web">
                 <div class="container">
                     <div>
                         <h1>Web</h1>
@@ -209,7 +245,7 @@
                 </div>
             </section>
             <!-- 섹션4 -->
-            <section>
+            <section id="contents">
                 <div class="container">
                     <div>
                         <h1>Contents</h1>
@@ -275,7 +311,7 @@
                 </div>
             </section>
             <!-- 섹션5 -->
-            <section>
+            <section id="works">
                 <div class="container">
                     <div class="left"><img src="images/photo_1.png" alt="" /></div>
                     <div class="right">
@@ -303,9 +339,8 @@
                         </div>
                     </div>
                 </div>
-                <div id="bl"></div>
             </section>
         </main>
-        <footer></footer>
+        <footer><p>©jiwon.kim</p></footer>
     </body>
 </html>
