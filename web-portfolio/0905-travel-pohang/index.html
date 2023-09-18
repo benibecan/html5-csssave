@@ -3,13 +3,19 @@
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1" />
+        <!-- 스타일 -->
         <link rel="stylesheet" href="css/style.css" />
+        <!-- 폰트 -->
+        <link rel="stylesheet" href="css/webfonts.css" />
+        <!-- 휠 -->
         <link rel="stylesheet" href="css/aos.css" />
-        <link rel="stylesheet" href="css/swaper-bundle.css" />
-        <script src="js/jquery-3.7.1.min.js"></script>
         <script src="js/aos.js"></script>
+        <!-- 슬라이드 -->
+        <link rel="stylesheet" href="css/swaper-bundle.css" />
         <script src="js/swiper-bundle.js"></script>
+        <!-- 스크립트 -->
+        <script src="js/jquery-3.7.1.min.js"></script>
         <title>Travel</title>
         <script>
             AOS.init({
@@ -26,60 +32,144 @@
         <div id="wrap">
             <header>
                 <h1></h1>
-                <ul id="gnb">
-                    <ul>
-                        <li><a href="#">Information</a></li>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Culture</a></li>
-                    </ul>
+                <ul class="gnb">
+                    <li><a href="#">Information</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Culture</a></li>
                 </ul>
-                <div class="snsSet">
-                    <ul>
-                        <li><a href="#">serch</a>serch</li>
-                    </ul>
-                </div>
+                <ul class="snsSet">
+                    <li><a href="#">serch</a></li>
+                    <li><a href="#">serch</a></li>
+                </ul>
             </header>
             <div class="top">
                 <h1>
                     <strong>Discover</strong><br />
-                    Wonderful Indonesia
+                    Wonderful Pohang
                 </h1>
             </div>
             <div class="content">
-                <div class="left">left</div>
+                <div class="left">
+                    <img src="images/homi.jpg" alt="" />
+                </div>
                 <div class="right">
-                    right
-                    <span>EAST NUSA TENGGARA</span>
-                    <h1>Have you enjoyed your holiday?</h1>
+                    <div class="text">
+                        <span class="line">HOMIGOT SUNRISE SQUARE</span>
+                        <h1>
+                            Have you<br />
+                            enjoyed the <br />
+                            Pohang?
+                        </h1>
+                        <p>
+                            Pohang has one of South Korea’s largest seafood markets, the fun yet terrifying Space Walk
+                            at Hwanho Park, the famous Homigot Sunrise Square and nice beaches. Pohang along with some
+                            of my recommendations on getting around town, places to eat and drink, and unique things to
+                            do and see.
+                        </p>
+                        <span class="arrow">read more</span>
+                    </div>
+                </div>
+            </div>
+            <div class="content2">
+                <div class="text">
+                    <h1>My Pohang Travel Guide<br />Places to Eat and See!</h1>
                     <p>
-                        You will be amazed if you take part in this sailing Komodo island tour package. So it is also
-                        mandatory for you, besides enjoying Komodo tourism on Komodo Island, you also have to taste the
-                        marine tourism. The beautiful waters of Komodo will make you meet many travelers from other
-                        countries.
+                        Pohang, is an industrial city located on South Korea’s eastern coast. Pohang is home to POSCO,
+                        <br />
+                        a huge steel industrial factory that dominates the city and is most likely the reason Pohang has
+                        grown into the size<br />
+                        it is today, it employees a lot of people! There is more to Pohang then its gigantic steel
+                        factory.
                     </p>
-                    <span>read more</span>
+                </div>
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/photo1.jpg" alt="" /></div>
+                        <div class="swiper-slide"><img src="images/photo2.jpg" alt="" /></div>
+                        <div class="swiper-slide"><img src="images/photo3.jpg" alt="" /></div>
+                        <div class="swiper-slide"><img src="images/photo4.jpg" alt="" /></div>
+                        <div class="swiper-slide"><img src="images/photo5.jpg" alt="" /></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                 </div>
             </div>
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="images/photo1.jpg" alt="" /></div>
-                    <div class="swiper-slide"><img src="images/photo2.jpg" alt="" /></div>
-                    <div class="swiper-slide"><img src="images/photo3.jpg" alt="" /></div>
-                    <div class="swiper-slide"><img src="images/photo4.jpg" alt="" /></div>
-                    <div class="swiper-slide"><img src="images/photo5.jpg" alt="" /></div>
+            <div class="content content3">
+                <div class="left">
+                    <img src="images/market.jpg" alt="" />
                 </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
+                <div class="right">
+                    <div class="text">
+                        <span class="line">JUKDO FISH MARKET</span>
+                        <h1>
+                            Have you<br />
+                            tasted the <br />
+                            Phoang?
+                        </h1>
+                        <p>
+                            If you are like me and love exploring local markets, then the Pohang Jukdo Market is not to
+                            be missed. This market is recommended in any Pohang travel guide or things to do list. But
+                            there is a reason why. It’s one of the largest markets in all of Korea bringing in fresh
+                            seafood daily.
+                        </p>
+                        <span class="arrow">read more</span>
+                    </div>
+                </div>
             </div>
-            <footer></footer>
+            <div class="footer">
+                <div>
+                    <ul>
+                        <li><h1></h1></li>
+                        <li>Ready to explore?<button type="button">Get started</button></li>
+                    </ul>
+                    <ul class="services">
+                        <li>
+                            <ul>
+                                <li>
+                                    <h1>Let's go on vacation,<br />Make your day</h1>
+                                </li>
+                                <li class="search">
+                                    <input type="text" placeholder="Email address" /><button type="button">></button>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li><b>Services</b></li>
+                                <li>Email Marketing</li>
+                                <li>Campaigns</li>
+                                <li>Branding</li>
+                                <li>Offline</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li><b>About</b></li>
+                                <li>Our Story</li>
+                                <li>Benefits</li>
+                                <li>Team</li>
+                                <li>Careers</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li><b>Help</b></li>
+                                <li>FAQs</li>
+                                <li>Contact Us</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <p style="color: #fff; text-align: center; margin: 5rem">Copyright 2021 QWERy</p>
         </div>
         <script>
             // 배너
             var swiper = new Swiper('.mySwiper', {
                 mousewheel: true,
                 slidesPerView: 1, //한번에 보이는 slide 개수
-                spaceBetween: 30,
+                spaceBetween: 32,
                 loop: true, //반복
                 mousewheel: false, //마우스 휠해서 앞뒤로 넘김
 
@@ -89,7 +179,7 @@
                 },
 
                 autoplay: {
-                    delay: 1000, //넘어가는 속도
+                    delay: 5000, //넘어가는 속도
                     disableOnInteraction: false,
                     pauseOnMouseEnter: true, //마우스 올리면 움직임 멈춤
                 },

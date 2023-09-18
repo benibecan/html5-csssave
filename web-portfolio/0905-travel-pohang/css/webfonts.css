@@ -1,0 +1,19 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'OpenSans';
+    src: url('../webfonts/OpenSans-Bold.woff') format('woff');
+    font-weight: 700;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'OpenSans';
+    src: url('../webfonts/OpenSans-Regular.woff') format('woff');
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'OpenSans';
+    src: url('../webfonts/OpenSans-Light.woff') format('woff');
+    font-weight: 300;
+    font-display: swap;
+}
