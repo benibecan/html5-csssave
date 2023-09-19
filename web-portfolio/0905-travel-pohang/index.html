@@ -6,29 +6,27 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1" />
         <!-- 스타일 -->
         <link rel="stylesheet" href="css/style.css" />
+        <!-- 구글아이콘 -->
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        />
         <!-- 폰트 -->
         <link rel="stylesheet" href="css/webfonts.css" />
-        <!-- 휠 -->
+        <!-- aos -->
         <link rel="stylesheet" href="css/aos.css" />
         <script src="js/aos.js"></script>
         <!-- 슬라이드 -->
         <link rel="stylesheet" href="css/swaper-bundle.css" />
         <script src="js/swiper-bundle.js"></script>
-        <!-- 스크립트 -->
-        <script src="js/jquery-3.7.1.min.js"></script>
+        <!-- 제이쿼리 스크립트 -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <!-- 제목 -->
         <title>Travel</title>
-        <script>
-            AOS.init({
-                offset: 120, //트리거 포인트에서 오프셋(px) 기본값120
-                duration: 1000, // 1000=1초, 기본값 400, 0~30000까지 들어간다. 단위는 밀리세컨드
-                delay: 500, //지연시간
-                once: false, //한번실행 true 여러번실행 false
-                easing: 'ease-in',
-            });
-        </script>
     </head>
+
     <body>
-        <div class="popup"></div>
         <div id="wrap">
             <header>
                 <h1></h1>
@@ -38,28 +36,32 @@
                     <li><a href="#">Culture</a></li>
                 </ul>
                 <ul class="snsSet">
-                    <li><a href="#">serch</a></li>
-                    <li><a href="#">serch</a></li>
+                    <li>
+                        <a href="#"><span class="material-symbols-outlined"> search </span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="material-symbols-outlined"> menu </span></a>
+                    </li>
                 </ul>
             </header>
-            <div class="top">
-                <h1>
+
+            <div class="top scroll">
+                <h1
+                    data-aos="fade-right"
+                    style="position: absolute; z-index: 1; top: 30%; left: 50%; transform: translate(-50%, -50%)"
+                >
                     <strong>Discover</strong><br />
                     Wonderful Pohang
                 </h1>
             </div>
-            <div class="content">
+            <div class="content scroll">
                 <div class="left">
                     <img src="images/homi.jpg" alt="" />
                 </div>
-                <div class="right">
+                <div class="right scroll">
                     <div class="text">
                         <span class="line">HOMIGOT SUNRISE SQUARE</span>
-                        <h1>
-                            Have you<br />
-                            enjoyed the <br />
-                            Pohang?
-                        </h1>
+                        <h1 class="tittle">Have you enjoyed <br />the Pohang?</h1>
                         <p>
                             Pohang has one of South Korea’s largest seafood markets, the fun yet terrifying Space Walk
                             at Hwanho Park, the famous Homigot Sunrise Square and nice beaches. Pohang along with some
@@ -70,19 +72,17 @@
                     </div>
                 </div>
             </div>
-            <div class="content2">
+            <div class="content2 scroll">
                 <div class="text">
-                    <h1>My Pohang Travel Guide<br />Places to Eat and See!</h1>
+                    <h1 class="tittle">My Pohang Travel<br />Eat and See!</h1>
                     <p>
-                        Pohang, is an industrial city located on South Korea’s eastern coast. Pohang is home to POSCO,
-                        <br />
-                        a huge steel industrial factory that dominates the city and is most likely the reason Pohang has
-                        grown into the size<br />
-                        it is today, it employees a lot of people! There is more to Pohang then its gigantic steel
-                        factory.
+                        Pohang, is an industrial city located on South Korea’s eastern coast. Pohang is home to POSCO, a
+                        huge steel industrial factory that dominates the city and is most likely the reason Pohang has
+                        grown into the size it is today, it employees a lot of people! There is more to Pohang then its
+                        gigantic steel factory.
                     </p>
                 </div>
-                <div class="swiper mySwiper">
+                <div class="swiper mySwiper scroll">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide"><img src="images/photo1.jpg" alt="" /></div>
                         <div class="swiper-slide"><img src="images/photo2.jpg" alt="" /></div>
@@ -95,18 +95,14 @@
                     <div class="swiper-button-prev"></div>
                 </div>
             </div>
-            <div class="content content3">
+            <div class="content content3 scroll">
                 <div class="left">
                     <img src="images/market.jpg" alt="" />
                 </div>
                 <div class="right">
                     <div class="text">
                         <span class="line">JUKDO FISH MARKET</span>
-                        <h1>
-                            Have you<br />
-                            tasted the <br />
-                            Phoang?
-                        </h1>
+                        <h1 class="tittle">Have you tasted <br />the Phoang?</h1>
                         <p>
                             If you are like me and love exploring local markets, then the Pohang Jukdo Market is not to
                             be missed. This market is recommended in any Pohang travel guide or things to do list. But
@@ -165,7 +161,7 @@
             <p style="color: #fff; text-align: center; margin: 5rem">Copyright 2021 QWERy</p>
         </div>
         <script>
-            // 배너
+            // 슬라이드 스크립트
             var swiper = new Swiper('.mySwiper', {
                 mousewheel: true,
                 slidesPerView: 1, //한번에 보이는 slide 개수
@@ -190,9 +186,9 @@
                     prevEl: '.swiper-button-prev', //버튼 후
                 },
             });
-            //스크롤
+            //스크롤 스크립트
             $(function () {
-                let el = $('div.content');
+                let el = $('.scroll');
                 $(el).each(function (index) {
                     $(this).on('mousewheel', function () {
                         console.log(event.wheelDelta);
@@ -207,6 +203,14 @@
                             .animate({ scrollTop: moveTop + 'px' }, 1000);
                     });
                 });
+            });
+            // aos 스크립트
+            AOS.init({
+                offset: 120, //트리거 포인트에서 오프셋(px) 기본값120
+                duration: 1000, // 1000=1초, 기본값 400, 0~30000까지 들어간다. 단위는 밀리세컨드
+                delay: 500, //지연시간
+                once: false, //한번실행 true 여러번실행 false
+                easing: 'ease-in',
             });
         </script>
     </body>
