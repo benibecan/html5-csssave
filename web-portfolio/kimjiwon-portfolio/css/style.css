@@ -5,7 +5,8 @@
   box-sizing: border-box;
 }
 
-ul {
+ul,
+li {
   list-style: none;
 }
 
@@ -13,18 +14,25 @@ a {
   text-decoration: none;
 }
 
-body,
 html {
+  font-size: 62.5%;
+  letter-spacing: -0.05rem;
   font-family: "Pretendard", "Montserrat", "Montagu Slab", "나눔고딕", sans-serif;
-  width: 100%;
-  height: auto;
+}
+
+body {
+  height: 100vh;
+  font-size: 1.4rem;
   background: #f9f8f7;
-  overflow-x: hidden;
+}
+
+h1 {
+  font-size: 2.4rem;
 }
 
 div.wrap {
+  width: 100%;
   height: 100%;
-  margin: 0 72px;
 }
 
 header {
@@ -32,11 +40,11 @@ header {
   left: 0;
   top: 0;
   width: 100%;
-  height: 120px;
+  height: 12rem;
   margin: 0 auto;
   color: #152692;
   font-family: "Montserrat";
-  font-size: 18px;
+  font-size: 1.8rem;
   z-index: 999;
 }
 header a {
@@ -53,21 +61,21 @@ header .lnb {
   display: flex;
 }
 header .lnb > li {
-  padding: 20px 10px;
+  padding: 2rem 1rem;
   cursor: pointer;
 }
 header .triangle {
   width: 0px;
   height: 0px;
-  border-top: 9px solid #152692;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
+  border-top: 0.9rem solid #152692;
+  border-left: 0.6rem solid transparent;
+  border-right: 0.6rem solid transparent;
   transition: 0.2s;
 }
 header .lnb > li:nth-child(2) {
   position: relative;
   display: flex;
-  gap: 10px;
+  gap: 1rem;
   align-items: center;
 }
 header .lnb > li:nth-child(2) .lnbm {
@@ -80,7 +88,7 @@ header .lnb > li:nth-child(2) .lnbm {
 }
 header .lnb > li:nth-child(2) .lnbm a {
   display: block;
-  padding: 10px 0;
+  padding: 1rem 0;
 }
 header .lnb > li:nth-child(2):hover .lnbm,
 header .lnb > li:nth-child(2) .lnbm:hover {
@@ -92,24 +100,72 @@ header .lnb > li:nth-child(2) .lnbm:hover ul.triangle {
   transform: rotate(180deg);
 }
 
+.hambtn {
+  display: none;
+  cursor: pointer;
+}
+
+.ham_bg {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.hamclose {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.hambox {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: 100%;
+  box-shadow: 0 0 10rem rgba(0, 0, 0, 0.3);
+}
+.hambox li {
+  width: 100%;
+}
+.hambox li a {
+  display: block;
+  width: 100%;
+  line-height: 10rem;
+  background: #fff;
+  padding-left: calc(50vw - 60%);
+  font-family: "Montserrat";
+  font-weight: bold;
+}
+.hambox li a:hover {
+  text-decoration: underline;
+}
+
 section {
   width: 100%;
   margin: 0 auto;
-  border: 1px solid #000;
   overflow: hidden;
 }
 
 div.container {
   width: 100%;
   height: 100%;
-  padding: 120px 120px;
 }
 
 main section#intro:has(.container > ul:hover) {
   background: #152692;
 }
 main section#intro {
-  height: 1024px;
   position: relative;
   background: #f9f8f7;
   transform: translateX(0%);
@@ -135,14 +191,13 @@ main section#intro ul.change li:nth-child(1),
 main section#intro ul.change li:nth-child(2) {
   width: 100%;
   height: 100%;
-  line-height: 160px;
+  line-height: 1.15;
   transform: translateX(0%);
 }
 main section#intro ul.change li:nth-child(1) h1,
 main section#intro ul.change li:nth-child(2) h1 {
   display: block;
   font-family: "Montserrat";
-  font-size: 164px;
   font-weight: bold;
   letter-spacing: -0.0375em;
 }
@@ -155,8 +210,8 @@ main section#intro ul.change li:nth-child(2) {
 }
 main section#intro ul.change li:nth-child(3) {
   position: absolute;
-  width: 270px;
-  height: 270px;
+  width: 27rem;
+  height: 27rem;
   left: 0;
   bottom: 0;
   transform: translateX(0%);
@@ -183,7 +238,7 @@ main section#intro ul.change:hover li:nth-child(3) {
 }
 main section#intro .scroll-down {
   position: absolute;
-  bottom: 10%;
+  bottom: 5%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -191,7 +246,7 @@ main section#intro .scroll-down {
 main section#intro .scroll-down .scroll {
   width: 2.5rem;
   height: 4rem;
-  border: 2px solid #152692;
+  border: 0.2rem solid #152692;
   border-radius: 2rem;
   display: flex;
   justify-content: center;
@@ -272,106 +327,102 @@ main section#intro .scroll-down .arrow-down {
   }
 }
 main section#aboutme {
-  font-size: 18px;
-  height: 1024px;
+  padding-top: 10rem;
+  font-size: 1.8rem;
+  margin: 0 auto;
 }
-main section#aboutme div.container {
-  border: 1px solid #000;
-}
-main section#aboutme div.container > ul {
-  width: 100%;
-  height: 100%;
+main section#aboutme .abm {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 120px;
 }
-main section#aboutme div.container > ul > li {
-  flex: 1 1 30% 70%;
-}
-main section#aboutme div.container > ul li.circle {
-  position: relative;
-  width: 419px;
-  height: 419px;
+main section#aboutme .abm li.circle {
+  width: 41.9rem;
+  height: 41.9rem;
+  border-radius: 50%;
   background: #ffc908;
-  border-radius: 100%;
 }
-main section#aboutme div.container > ul li.circle h1 {
+main section#aboutme .abm li.circle h1 {
   position: absolute;
   top: 0;
-  right: -10%;
+  right: 0;
   font-family: "MontaguSlab";
-  font-size: 48px;
+  font-size: 4.8rem;
   text-align: right;
 }
-main section#aboutme div.container > ul li.circle > div:nth-child(1) {
-  width: 88%;
-  height: 88%;
+main section#aboutme .abm li.circle div:nth-of-type(1) > img {
   position: absolute;
-  top: 50%;
-  left: 50%;
   display: block;
-  transform: translate(-50%, -50%);
-  background: url(../images/photo_1.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-main section#aboutme div.container > ul li.circle > div:nth-child(2) {
-  width: 87%;
-  height: 87%;
-  position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-46%, -53%);
-  background: url(../images/photo_2.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
+  transform: translate(-50%, -50%);
+  max-width: 90%;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+main section#aboutme .abm li.circle > div > img:nth-of-type(1) {
+  opacity: 1;
+  transition: 0.5s;
+}
+main section#aboutme .abm li.circle > div > img:nth-of-type(2) {
   opacity: 0;
   transition: 0.5s;
 }
-main section#aboutme div.container > ul li.circle:hover > div:nth-child(1) {
-  display: none;
+main section#aboutme .abm li.circle:hover > div > img:nth-of-type(1) {
+  opacity: 0;
 }
-main section#aboutme div.container > ul li.circle:hover > div:nth-child(2) {
+main section#aboutme .abm li.circle:hover > div > img:nth-of-type(2) {
+  display: block;
   opacity: 1;
 }
-main section#aboutme div.container > ul ul.txt {
+main section#aboutme .abm li.txtp {
+  margin-top: 4rem;
+}
+main section#aboutme .abm li.txtp li {
+  width: 100%;
+  height: 100%;
+}
+main section#aboutme .abm li.txtp ul.txt {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 40px;
+  gap: 4rem;
 }
-main section#aboutme div.container > ul ul.txt ul > li {
-  padding-bottom: 20px;
+main section#aboutme .abm li.txtp ul.txt ul > li {
+  width: 100%;
+  padding-bottom: 2rem;
 }
-main section#aboutme div.container > ul ul.txt li.btn {
+main section#aboutme .abm li.txtp ul.txt ul > li p {
+  width: 100%;
+}
+main section#aboutme .abm li.txtp ul.txt li.btn {
   display: flex;
-  gap: 12px;
+  flex-wrap: wrap;
+  gap: 1.2rem;
 }
-main section#aboutme div.container > ul ul.txt li.btn button {
-  font-size: 18px;
+main section#aboutme .abm li.txtp ul.txt li.btn button {
+  font-size: 1.4rem;
   background: #000;
   color: #fff;
-  padding: 10px 20px;
-  border-radius: 999px;
+  padding: 1rem 2rem;
+  border-radius: 99.9rem;
   border: none;
-  line-height: 30px;
+  line-height: 3rem;
   cursor: pointer;
 }
-main section#aboutme div.container > ul ul.txt li.btn button span {
+main section#aboutme .abm li.txtp ul.txt li.btn button span {
   display: inline-block;
-  line-height: 10px;
+  line-height: 1rem;
 }
-main section#aboutme div.container > ul ul.txt li.btn button:hover {
+main section#aboutme .abm li.txtp ul.txt li.btn button:hover {
   background: #152692;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0 0.1rem 0.4rem;
 }
-main section#aboutme div.container > ul ul.txt li.btn button:hover > span {
+main section#aboutme .abm li.txtp ul.txt li.btn button:hover > span {
   -webkit-animation-name: move;
           animation-name: move;
   -webkit-animation-duration: 1s;
@@ -405,8 +456,24 @@ main section#aboutme div.container > ul ul.txt li.btn button:hover > span {
     scale: 1;
   }
 }
+@-webkit-keyframes modalup {
+  0% {
+    bottom: -20rem;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+@keyframes modalup {
+  0% {
+    bottom: -20rem;
+  }
+  100% {
+    bottom: 0;
+  }
+}
 main .modal {
-  display: block; /* Hidden by default */
+  display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 999; /* Sit on top */
   left: 0;
@@ -415,22 +482,28 @@ main .modal {
   height: 100%; /* Full height */
   overflow: hidden; /* Enable scroll if needed */
   background-color: rgba(0, 0, 0, 0.4);
+  transition: 0.5s;
   /*
    Fallback color */
 }
 main .modal .modal-content {
+  width: 90%;
+  height: 80%;
+  -webkit-animation: modalup 1s;
+          animation: modalup 1s;
   overflow: hidden;
-  position: relative;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0 auto;
   background-color: #fefefe;
-  margin: 120px auto;
-  width: 85%;
-  height: 90%;
-  border-radius: 30px 30px 0 0;
+  border-radius: 3rem 3rem 0 0;
   text-align: center;
-  padding: 20px;
 }
 main .modal .modal-content h1 {
-  line-height: 70px;
+  line-height: 7rem;
+  line-height: 8rem;
 }
 main .modal .modal-content > div.close {
   cursor: pointer;
@@ -439,8 +512,8 @@ main .modal .modal-content > div.close {
   right: 0;
   display: block;
   background-color: #152692;
-  padding: 10px;
-  margin: 20px;
+  padding: 1rem;
+  margin: 2rem;
   border-radius: 50%;
 }
 main .modal .modal-content > div.close > span {
@@ -448,18 +521,18 @@ main .modal .modal-content > div.close > span {
 }
 main .modal .modal-content > div.close > span > span {
   display: block;
-  width: 25px;
-  height: 5px;
+  width: 2.5rem;
+  height: 0.5rem;
   background: #fff;
-  margin: 5px 0;
+  margin: 0.5rem 0;
   transition: transform 0.2s ease-in;
-  border-radius: 3px;
+  border-radius: 0.3rem;
 }
 main .modal .modal-content > div.close > span .bar1 {
-  transform: translate(0, 5px) rotate(45deg);
+  transform: translate(0, 0.5rem) rotate(45deg);
 }
 main .modal .modal-content > div.close > span .bar2 {
-  transform: translate(0, -5px) rotate(-45deg);
+  transform: translate(0, -0.5rem) rotate(-45deg);
 }
 main .modal .modal-content > div.close > div:hover .bar1 {
   transform: translate(0, 5px) rotate(-50deg);
@@ -467,7 +540,10 @@ main .modal .modal-content > div.close > div:hover .bar1 {
 main .modal .modal-content > div.close > div:hover .bar2 {
   transform: translate(0, -5px) rotate(-135deg);
 }
-main .modal .modal-content > div.labels label > input {
+main .modal .modal-content div.labels {
+  margin-bottom: 4.2rem;
+}
+main .modal .modal-content div.labels label input {
   accent-color: #152692;
   width: 1rem;
   height: 1rem;
@@ -479,190 +555,362 @@ main .modal .modal-content > div.labels label > input {
   cursor: pointer;
   transition: background 0.2s;
 }
-main .modal .modal-content > div.labels input[type=checkbox]:checked {
-  background: gold;
+main .modal .modal-content div.labels label input[type=radio]:checked {
+  background: #ffc908;
   border: none;
 }
-main .modal .modal-content > div.photo {
+main .modal .modal-content .photo {
   position: relative;
-  width: 90%;
-  height: 100%;
-  margin: 0 auto;
+  width: 100%;
+  overflow: hidden;
 }
-main .modal .modal-content > div.photo > img {
+main .modal .modal-content .photo img {
+  display: none;
   position: absolute;
-  width: 20%;
-  height: auto;
-  filter: hue-rotate(-20deg);
+  max-width: 80%;
+  max-height: 50%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  transition: 1s;
 }
-main .modal .modal-content > div.photo > img:nth-child(1) {
+main .modal .modal-content .photo > img:nth-child(1) {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+main .modal .modal-content .photo > img:nth-child(2) {
+  top: 0;
+  right: 5%;
+  z-index: 9;
+}
+main .modal .modal-content .photo > img:nth-child(3) {
+  top: 5%;
+  left: 0%;
+}
+main .modal .modal-content .photo > img:nth-child(4) {
+  bottom: 0%;
+  left: 0%;
+  transform: scaleX(-1) scale(0.8);
+}
+main .modal .modal-content .photo > img:nth-child(5) {
   bottom: 0;
-  left: 0;
-}
-main .modal .modal-content > div.photo > img:nth-child(2) {
-  top: 30%;
-  left: 10%;
-}
-main .modal .modal-content > div.photo > img:nth-child(3) {
-  top: 20%;
-  left: 20%;
-}
-main .modal .modal-content > div.photo > img:nth-child(4) {
-  top: 30%;
-  right: 30%;
-}
-main .modal .modal-content > div.photo > img:nth-child(5) {
-  top: 40%;
-  right: 10%;
-}
-main .modal .modal-content > div.photo > img:nth-child(6) {
-  top: 0%;
-  right: 20%;
-}
-main .modal .modal-content > div.photo > img:nth-child(7) {
-  top: 20%;
   right: 0;
+  transform: scale(0.8);
 }
-main section#web,
-main section#contents {
+main .modal .modal-content .photo > img:nth-child(6) {
+  bottom: 10%;
+  right: 30%;
+  z-index: 1;
+}
+main .modal .modal-content .photo > img:nth-child(7) {
+  top: 50%;
+  left: 0%;
+  transform: translateY(-50%);
+}
+main .modal .modal-content .photo > img:nth-child(8) {
+  bottom: 10%;
+  right: 0;
+  transform: translateY(-50%);
+}
+main section#works {
+  margin-top: 10rem;
   width: 100%;
   height: 100%;
 }
-main section#web div.container,
-main section#contents div.container {
+main section#works div.container {
   height: 100%;
   text-align: center;
   color: #152692;
 }
-main section#web div.container div,
-main section#contents div.container div {
-  margin-bottom: 120px;
+main section#works div.container div {
+  width: 100%;
+  margin-bottom: 12rem;
 }
-main section#web div.container div h1,
-main section#contents div.container div h1 {
+main section#works div.container div h1 {
   display: inline-block;
   font-family: "Montserrat";
-  font-size: 96px;
   font-weight: bold;
   text-align: center;
 }
-main section#web div.container div p,
-main section#contents div.container div p {
+main section#works div.container div p {
   font-family: "Montserrat";
-  font-size: 18px;
+  font-size: 1.8rem;
 }
-main section#web div.container ul.box,
-main section#contents div.container ul.box {
+main section#works div.container ul.box {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 120px;
-  gap: 2px;
+  margin-bottom: 12rem;
+  gap: 0.2rem;
 }
-main section#web div.container .box li,
-main section#contents div.container .box li {
+main section#works div.container .box li {
   position: relative;
-  flex: 1 1 30%;
   height: auto;
   overflow: hidden;
   background: #d9d9d9;
 }
-main section#web div.container img,
-main section#contents div.container img {
+main section#works div.container img {
   max-width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-main section#web div.container .box > li > ul > li:nth-child(2),
-main section#contents div.container .box > li > ul > li:nth-child(2) {
+main section#works div.container .box > li > ul > li:nth-child(2) {
   position: absolute;
   left: 0;
   top: 0;
   z-index: 1;
   display: none;
 }
-main section#web div.container .box > li:hover > ul > li:nth-child(2),
-main section#contents div.container .box > li:hover > ul > li:nth-child(2) {
+main section#works div.container .box > li:hover > ul > li:nth-child(2) {
   display: block;
 }
-main section#web div.container button,
-main section#contents div.container button {
+main section#works div.container button {
   font-size: 18px;
   background: #000;
   color: #fff;
-  padding: 10px 20px;
-  border-radius: 999px;
+  padding: 1rem 2rem;
+  border-radius: 99.9rem;
   border: none;
 }
-main section#web div.container button:hover,
-main section#contents div.container button:hover {
+main section#works div.container button:hover {
   background: #152692;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
-main section#works img {
+main section#detail {
+  margin-top: 10rem;
+}
+main section#detail img {
   display: block;
   width: 100%;
   height: auto;
   -o-object-fit: contain;
      object-fit: contain;
 }
-main section#works div.container {
+main section#detail div.container {
   width: 100%;
   height: 100%;
-  display: flex;
-  flex: 1 1 50%;
-  gap: 78px;
 }
-main section#works div.container > div {
-  border: 1px solid #000;
+main section#detail div.container div.left {
+  float: left;
+  height: 100%;
 }
-main section#works div.container div.left {
-  position: relative;
+main section#detail div.container div.left > img {
   width: 100%;
+  height: auto;
 }
-main section#works div.container div.left > img {
-  position: absolute;
-  top: 0;
-  left: 0;
+main section#detail div.container div.right {
+  float: right;
+  height: 100%;
 }
-main section#works div.container div.right div.name {
+main section#detail div.container div.right div.name {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 40px;
+  padding-bottom: 4rem;
 }
-main section#works div.container div.right div.name h2 {
-  font-size: 18px;
+main section#detail div.container div.right div.name h2 {
+  font-size: 1.8rem;
 }
-main section#works div.container div.right div.name > div {
+main section#detail div.container div.right div.name > div {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 2rem;
 }
-main section#works div.container div.right div.name > div > span {
+main section#detail div.container div.right div.name > div > span {
   background: #000;
-  border-radius: 999px;
+  border-radius: 99.9rem;
   color: #fff;
-  padding: 5px 15px;
+  padding: 0.5rem 1.5rem;
   font-family: "Montserrat";
-  font-size: 12px;
+  font-size: 1.2rem;
 }
-main section#works div.container div.right div.name > div span:hover {
+main section#detail div.container div.right div.name > div span:hover {
   background: #152692;
 }
-main section#works div.container div.right div.name > div > p {
+main section#detail div.container div.right div.name > div > p {
   font-family: "Montserrat";
-  font-size: 18px;
+  font-size: 1.8rem;
 }
-main section#works div.container div.right div.ex p {
-  padding-bottom: 20px;
+main section#detail div.container div.right div.ex p {
+  padding-bottom: 2rem;
 }
 
-footer {
-  width: 100%;
-  text-align: center;
-}
 footer p {
-  font-size: 12px;
-  margin-bottom: 40px;
+  color: #152692;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 10rem 0 5rem 0;
+}
+
+@media screen and (max-width: 2560px) {
+  section#intro {
+    height: 80rem;
+  }
+  .li.txtp {
+    width: 50%;
+  }
+  .abm {
+    gap: 8rem;
+  }
+  .modal-content {
+    padding: 7rem;
+  }
+  .labels label:not(:last-of-type) {
+    padding-right: 2rem;
+  }
+  ul.change li:nth-child(1) h1,
+ul.change li:nth-child(2) h1 {
+    font-size: 16.4rem;
+  }
+  .box li {
+    flex: 1 1 30%;
+  }
+  div.container {
+    padding: 0 12rem;
+  }
+  div.wrap {
+    padding: 0 6rem;
+  }
+  section#detail > div.container > div {
+    width: 50%;
+  }
+  div.container > div > h1 {
+    font-size: 9.6rem;
+  }
+  .photo {
+    height: 75%;
+  }
+  .photo > img {
+    display: block;
+  }
+  .photo > img:nth-child(8) {
+    width: 30%;
+  }
+  .photo > img:nth-child(7) {
+    width: 25%;
+  }
+  .photo > img:nth-child(6) {
+    width: 30%;
+  }
+  .photo > img:nth-child(1) {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  div.container {
+    padding: 0 6rem;
+  }
+  .abm {
+    gap: 6rem;
+  }
+  .photo > img:nth-child(6) {
+    display: none;
+  }
+}
+@media screen and (max-width: 769px) {
+  .modal-content {
+    padding: 5rem;
+  }
+  li.circle {
+    margin: 0 auto;
+  }
+  .box li {
+    flex: 1 1 40%;
+  }
+  .box li:last-of-type {
+    display: none;
+  }
+  .abm {
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  li.txtp {
+    width: 100%;
+  }
+  section#detail > div.container > div {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  div.container {
+    padding: 0 4rem;
+  }
+  div.wrap {
+    padding: 0 4rem;
+  }
+  header {
+    height: 9rem;
+  }
+  ul.lnb {
+    display: none;
+  }
+  .modal-content {
+    padding: 2.5rem;
+  }
+  ul.change li:nth-child(1) h1,
+ul.change li:nth-child(2) h1 {
+    font-size: 10.4rem;
+  }
+  #intro {
+    height: 62.4rem;
+  }
+  .hambtn {
+    display: block;
+  }
+  div.container > div > h1 {
+    font-size: 6.6rem;
+  }
+  .photo > img:nth-child(5) {
+    width: 60%;
+  }
+  .photo > img:nth-child(1),
+.photo > img:nth-child(2) {
+    width: 50%;
+  }
+  .photo > img:nth-child(8) {
+    bottom: 20%;
+    width: 40%;
+    display: block;
+  }
+}
+@media screen and (max-width: 376px) {
+  .photo img {
+    max-width: 50%;
+  }
+  .modal-content {
+    padding: 2rem;
+  }
+  ul.change li:nth-child(1) h1,
+ul.change li:nth-child(2) h1 {
+    font-size: 9.4rem;
+  }
+}
+@media screen and (max-width: 321px) {
+  div.container {
+    padding: 0 2rem;
+  }
+  div.wrap {
+    padding: 0 2rem;
+  }
+  section#intro {
+    height: 60rem;
+  }
+  .gnb > li:nth-of-type(1) {
+    font-size: 1.6rem;
+  }
+  .labels label:not(:last-of-type) {
+    padding-right: 0rem;
+  }
+  ul.change li:nth-child(1) h1,
+ul.change li:nth-child(2) h1 {
+    font-size: 7.4rem;
+  }
+  div.modal-content > h1 {
+    font-size: 1.8rem;
+    transition: 0.5s;
+  }
+  .photo {
+    height: 65%;
+  }
 }

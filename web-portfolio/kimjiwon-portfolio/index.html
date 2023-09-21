@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1" />
         <!-- 스타일 -->
         <link rel="stylesheet" href="css/style.css" />
         <link rel="stylesheet" href="css/webfonts.css" />
@@ -15,9 +15,15 @@
             crossorigin="anonymous"
         ></script>
         <script src="js/script.js"></script>
-        <!-- 스와이퍼 -->
+        <!-- 슬라이드 스와이퍼 -->
         <script src="js/swiper-bundle.js"></script>
         <link rel="stylesheet" href="css/swaper-bundle.css" />
+        <!-- aos -->
+        <script src="js/aos.js"></script>
+        <link rel="stylesheet" href="css/aos.css" />
+        <!-- 구글 아이콘 -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
         <!-- 파비콘 추가 -->
         <link rel="shortcut icon" href="images/favicon/favicon.ico" />
         <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
@@ -43,7 +49,7 @@
         <header>
             <div class="wrap">
                 <ul class="gnb">
-                    <li><strong>JIWON Web Portfolio</strong></li>
+                    <li data-aos="fade-right" data-aos-duration="1000"><strong>JIWON Web Portfolio</strong></li>
                     <li>
                         <ul class="lnb">
                             <li><a href="#aboutme">About Me</a></li>
@@ -57,16 +63,33 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="hambtn"><span class="material-icons" style="font-size: 4.8rem">menu</span></li>
+                </ul>
+            </div>
+            <div class="ham_bg">
+                <ul class="hambox rightm">
+                    <span class="hamclose material-icons" style="font-size: 4.8rem">close</span>
+                    <li><a href="#aboutme">ABOUT ME</a></li>
+                    <li>
+                        <a href="#works">WORKS</a>
+                    </li>
                 </ul>
             </div>
         </header>
         <main>
-            <!-- 섹션1 -->
+            <!-- 인트로 -->
             <section id="intro">
                 <div class="container">
                     <ul class="change">
                         <li>
-                            <h1>Hello<br />I’m Jiwon</h1>
+                            <h1
+                                data-aos="fade-up"
+                                data-aos-anchor="#example-anchor"
+                                data-aos-offset="500"
+                                data-aos-duration="1000"
+                            >
+                                Hello<br />I’m Jiwon
+                            </h1>
                         </li>
                         <li>
                             <h1>
@@ -77,6 +100,7 @@
                         </li>
                         <li><img src="images/moon.png" alt="" /></li>
                     </ul>
+                    <!-- 마우스 스크롤 애니메이션 -->
                     <a href="#" class="scroll-down">
                         <div class="scroll">
                             <span class="scroll-dot"></span>
@@ -85,27 +109,28 @@
                     </a>
                 </div>
             </section>
-            <!-- 섹션2 -->
+            <!-- 어바웃미 -->
             <section id="aboutme">
                 <div class="container">
-                    <ul>
+                    <ul class="abm">
                         <!-- 이모지 프로필 -->
-                        <li class="circle">
-                            <div></div>
+                        <li class="circle" data-aos="fade-up" data-aos-offset="200" data-aos-easing="ease-in-sine">
+                            <div><img src="images/photo_1.png" alt="" /><img src="images/photo_2.png" alt="" /></div>
                             <div></div>
                             <h1>
                                 i do what<br />
+
                                 i like
                             </h1>
                         </li>
                         <!-- 자기소개 -->
-                        <li>
+                        <li class="txtp" data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-in-sine">
                             <ul class="txt">
                                 <li>About Me</li>
                                 <li>
                                     <ul>
                                         <li>
-                                            <p>안녕하세요, 웹 디자이너 & 퍼블리셔 김지원입니다.</p>
+                                            <p>안녕하세요, 웹퍼블리셔 김지원입니다.</p>
 
                                             <p>좋아하면 더 잘한다는 마음으로 디자인과 퍼블리싱을 하고 있습니다.</p>
                                         </li>
@@ -118,7 +143,7 @@
                                         </li>
                                         <li>
                                             <p>
-                                                창의적인 웹 디자인을 합니다. Photoshop/Illustration/Figma 등 을 다룰 수
+                                                편리한 웹 디자인을 합니다. Photoshop/Illustration/Figma 등 을 다룰 수
                                                 있어요.
                                             </p>
                                             <p>형태와 색을 가지고 논다는 마음으로, 설레이는 마음으로 디자인을합니다.</p>
@@ -133,9 +158,32 @@
                                     </ul>
                                 </li>
                                 <li class="btn">
-                                    <button class="hi" type="button">만나서 반가워요 ! <span>&#128075;</span></button>
-                                    <button class="job" type="button">경력사항 <span>&#127793;</span></button>
-                                    <button class="email" type="button">똑똑 <span>&#128236;</span></button>
+                                    <button
+                                        class="hi"
+                                        type="button"
+                                        data-aos-offset="100"
+                                        data-aos="fade-right"
+                                        data-aos-delay="100"
+                                    >
+                                        만나서 반가워요 ! <span>&#128075;</span>
+                                    </button>
+                                    <a
+                                        href="https://drive.google.com/file/d/1Gz7GUJCM7tQup7pj0jPS73kfWzNpP4Je/view?usp=sharing"
+                                        target="_blank"
+                                        data-aos-offset="100"
+                                        data-aos="fade-right"
+                                        data-aos-delay="300"
+                                        ><button class="job" type="button">
+                                            이력서 받아보기 <span>&#127793;</span>
+                                        </button></a
+                                    >
+                                    <a
+                                        href="mailto:benibecan@naver.com"
+                                        data-aos-offset="100"
+                                        data-aos="fade-right"
+                                        data-aos-delay="500"
+                                        ><button class="email" type="button">똑똑 <span>&#128236;</span></button></a
+                                    >
                                 </li>
                                 <div class="btnup">
                                     <div class="black"></div>
@@ -146,9 +194,9 @@
                     </ul>
                 </div>
             </section>
-            <!-- The Modal -->
+            <!-- 모달 -->
             <div id="himodal" class="modal">
-                <!-- Modal content -->
+                <!-- 모달 콘텐츠 -->
                 <div class="modal-content">
                     <div class="close" onClick="close_pop();">
                         <span class="pop_bt">
@@ -159,159 +207,90 @@
                     <h1>저는 이런 사람이에요</h1>
                     <br />
                     <div class="labels">
-                        <label><input type="checkbox" name="check" color="#f00" value="travel" /> Background</label>
-                        <label><input type="checkbox" name="check" value="experience" /> Travel</label>
-                        <label><input type="checkbox" name="check" value="funstuff" /> Fun Stuff</label>
+                        <label><input type="radio" name="tag" checked class="AL" />ALL</label>
+                        <label><input type="radio" name="tag" checked class="BACK" />BACKGROUND</label>
+                        <label><input type="radio" name="tag" class="LI" /> LIKE</label>
                     </div>
-
                     <div class="photo">
-                        <img src="images/baby.png" alt="" />
-                        <div></div>
-                        <img src="images/pohang.png" alt="" />
-                        <img src="images/sanghai.png" alt="" />
-                        <img src="images/taiwan.png" alt="" />
-                        <img src="images/gumamoto.png" alt="" />
-                        <img src="images/osaka.png" alt="" />
-                        <img src="images/hochimin.png" alt="" />
+                        <img src="images/baby.png" alt="" class="BACKGROUND" value="ALL" />
+                        <img src="images/pohang.png" alt="" class="BACKGROUND" value="ALL" />
+                        <img src="images/sanghai.png" alt="" class="LIKE" />
+                        <img src="images/camera.png" alt="" class="LIKE" />
+                        <img src="images/gumamoto.png" alt="" class="LIKE" />
+                        <img src="images/osaka.png" alt="" class="LIKE" />
+                        <img src="images/food.png" alt="" class="LIKE" />
+                        <img src="images/baking.png" alt="" class="LIKE" />
                     </div>
-                    <p><br />내용 또</p>
                 </div>
             </div>
-            <!--End Modal-->
-            <!-- 섹션3 -->
-            <section id="web">
-                <div class="container">
-                    <div>
-                        <h1>Web</h1>
-                        <p>What do I made?</p>
-                    </div>
-                    <ul class="box">
-                        <li>
-                            <ul>
-                                <li><img src="images/photo_1.png" alt="" /></li>
-                                <li><img src="images/photo_2.png" alt="" /></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul>
-                                <li><img src="images/photo_1.png" alt="" /></li>
-                                <li><img src="images/photo_2.png" alt="" /></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul>
-                                <li><img src="images/photo_1.png" alt="" /></li>
-                                <li><img src="images/photo_2.png" alt="" /></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul>
-                                <li><img src="images/photo_1.png" alt="" /></li>
-                                <li><img src="images/photo_2.png" alt="" /></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul>
-                                <li><img src="images/photo_1.png" alt="" /></li>
-                                <li><img src="images/photo_2.png" alt="" /></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul>
-                                <li><img src="images/photo_1.png" alt="" /></li>
-                                <li><img src="images/photo_2.png" alt="" /></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul>
-                                <li><img src="images/photo_1.png" alt="" /></li>
-                                <li><img src="images/photo_2.png" alt="" /></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul>
-                                <li><img src="images/photo_1.png" alt="" /></li>
-                                <li><img src="images/photo_2.png" alt="" /></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul>
-                                <li><img src="images/photo_1.png" alt="" /></li>
-                                <li><img src="images/photo_2.png" alt="" /></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <button type="button">Load more</button>
-                </div>
-            </section>
-            <!-- 섹션4 -->
-            <section id="contents">
-                <div class="container">
-                    <div>
-                        <h1>Contents</h1>
-                        <p>What do I made?</p>
-                    </div>
-                    <ul class="box">
-                        <li>
-                            <ul>
-                                <li><img src="images/photo_1.png" alt="" /></li>
-                                <li><img src="images/photo_2.png" alt="" /></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul>
-                                <li><img src="images/photo_1.png" alt="" /></li>
-                                <li><img src="images/photo_2.png" alt="" /></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul>
-                                <li><img src="images/photo_1.png" alt="" /></li>
-                                <li><img src="images/photo_2.png" alt="" /></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul>
-                                <li><img src="images/photo_1.png" alt="" /></li>
-                                <li><img src="images/photo_2.png" alt="" /></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul>
-                                <li><img src="images/photo_1.png" alt="" /></li>
-                                <li><img src="images/photo_2.png" alt="" /></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul>
-                                <li><img src="images/photo_1.png" alt="" /></li>
-                                <li><img src="images/photo_2.png" alt="" /></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul>
-                                <li><img src="images/photo_1.png" alt="" /></li>
-                                <li><img src="images/photo_2.png" alt="" /></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul>
-                                <li><img src="images/photo_1.png" alt="" /></li>
-                                <li><img src="images/photo_2.png" alt="" /></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul>
-                                <li><img src="images/photo_1.png" alt="" /></li>
-                                <li><img src="images/photo_2.png" alt="" /></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <button type="button">Load more</button>
-                </div>
-            </section>
-            <!-- 섹션5 -->
+            <!-- 웹 -->
             <section id="works">
+                <div class="container">
+                    <div>
+                        <h1 data-aos="fade-up" data-aos-offset="200" data-aos-duration="500">WORKS</h1>
+                        <p data-aos="fade-right" data-aos-duration="1300">What do I made?</p>
+                    </div>
+                    <ul class="box">
+                        <li>
+                            <ul>
+                                <li><img src="images/photo_1.png" alt="" /></li>
+                                <li><img src="images/photo_2.png" alt="" /></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li><img src="images/photo_1.png" alt="" /></li>
+                                <li><img src="images/photo_2.png" alt="" /></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li><img src="images/photo_1.png" alt="" /></li>
+                                <li><img src="images/photo_2.png" alt="" /></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li><img src="images/photo_1.png" alt="" /></li>
+                                <li><img src="images/photo_2.png" alt="" /></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li><img src="images/photo_1.png" alt="" /></li>
+                                <li><img src="images/photo_2.png" alt="" /></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li><img src="images/photo_1.png" alt="" /></li>
+                                <li><img src="images/photo_2.png" alt="" /></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li><img src="images/photo_1.png" alt="" /></li>
+                                <li><img src="images/photo_2.png" alt="" /></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li><img src="images/photo_1.png" alt="" /></li>
+                                <li><img src="images/photo_2.png" alt="" /></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li><img src="images/photo_1.png" alt="" /></li>
+                                <li><img src="images/photo_2.png" alt="" /></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <button type="button">Load more</button>
+                </div>
+            </section>
+            <!-- 상세 -->
+            <section id="detail">
                 <div class="container">
                     <div class="left"><img src="images/photo_1.png" alt="" /></div>
                     <div class="right">
@@ -320,7 +299,7 @@
                             <div class="name">
                                 <h2 class="title">도도 포인트 카드뉴스</h2>
                                 <div>
-                                    <span class="tag">Card News</span>
+                                    <span class="tag">CARD NEWS</span>
                                     <p class="date">2019.09.17</p>
                                 </div>
                             </div>
@@ -342,5 +321,8 @@
             </section>
         </main>
         <footer><p>©jiwon.kim</p></footer>
+        <script>
+            AOS.init();
+        </script>
     </body>
 </html>

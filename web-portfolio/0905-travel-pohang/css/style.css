@@ -442,6 +442,9 @@ header .snsSet li:nth-of-type(2) a {
   .footer {
     padding: 1rem;
   }
+  #wrap > div:not(:first-of-type) {
+    margin-bottom: 7rem;
+  }
 }
 @media screen and (max-width: 375px) {
   .top {
