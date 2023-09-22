@@ -12,7 +12,8 @@ a {
     color: #111;
 }
 body {
-    width: 100vw;
+    width: 100%;
+    height: 100vh;
     font-family: Pretendard, 'Noto Sans KR', sans-serif;
     font-weight: 400;
     color: #111;
@@ -123,12 +124,11 @@ h1 {
 /* ▲ test2 end ▲ */
 header {
     position: fixed;
-    width: 1280px;
+    width: 90%;
     top: 1%;
     left: 50%;
     transform: translateX(-50%);
     height: 80px;
-    /* background: #f5b335; */
     transition: top 0.2s ease-in-out;
     z-index: 999;
 }
@@ -368,6 +368,13 @@ header .header__wrap nav .nav__right .switch_btn .switch_btn__right {
 .introduction__left > div > .square_2 {
     width: 243.5px;
     height: 243.5px;
+}
+.square_1 img,
+.square_2 img,
+.square_3 img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .introduction__right {
     height: 100%;

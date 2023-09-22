@@ -12,6 +12,7 @@ li {
 
 a {
   text-decoration: none;
+  color: #152692;
 }
 
 html {
@@ -64,40 +65,11 @@ header .lnb > li {
   padding: 2rem 1rem;
   cursor: pointer;
 }
-header .triangle {
-  width: 0px;
-  height: 0px;
-  border-top: 0.9rem solid #152692;
-  border-left: 0.6rem solid transparent;
-  border-right: 0.6rem solid transparent;
-  transition: 0.2s;
-}
 header .lnb > li:nth-child(2) {
   position: relative;
   display: flex;
   gap: 1rem;
   align-items: center;
-}
-header .lnb > li:nth-child(2) .lnbm {
-  position: absolute;
-  top: 70%;
-  text-align: center;
-  left: 0;
-  transition: 0.1s;
-  visibility: hidden;
-}
-header .lnb > li:nth-child(2) .lnbm a {
-  display: block;
-  padding: 1rem 0;
-}
-header .lnb > li:nth-child(2):hover .lnbm,
-header .lnb > li:nth-child(2) .lnbm:hover {
-  visibility: visible;
-  top: 90%;
-}
-header .lnb > li:nth-child(2):hover ul.triangle,
-header .lnb > li:nth-child(2) .lnbm:hover ul.triangle {
-  transform: rotate(180deg);
 }
 
 .hambtn {
@@ -327,13 +299,12 @@ main section#intro .scroll-down .arrow-down {
   }
 }
 main section#aboutme {
-  padding-top: 10rem;
+  padding-bottom: 5rem;
   font-size: 1.8rem;
   margin: 0 auto;
 }
 main section#aboutme .abm {
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 main section#aboutme .abm li.circle {
@@ -614,11 +585,11 @@ main .modal .modal-content .photo > img:nth-child(8) {
   transform: translateY(-50%);
 }
 main section#works {
-  margin-top: 10rem;
   width: 100%;
   height: 100%;
 }
 main section#works div.container {
+  margin-top: 10rem;
   height: 100%;
   text-align: center;
   color: #152692;
@@ -648,8 +619,10 @@ main section#works div.container .box li {
   height: auto;
   overflow: hidden;
   background: #d9d9d9;
+  cursor: pointer;
 }
-main section#works div.container img {
+main section#works div.container .box li img {
+  display: block;
   max-width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -690,32 +663,47 @@ main section#detail img {
 main section#detail div.container {
   width: 100%;
   height: 100%;
+  display: flex;
+  gap: 4rem;
 }
 main section#detail div.container div.left {
-  float: left;
   height: 100%;
 }
 main section#detail div.container div.left > img {
   width: 100%;
-  height: auto;
 }
 main section#detail div.container div.right {
-  float: right;
   height: 100%;
+}
+main section#detail div.container div.right .color {
+  position: relative;
+}
+main section#detail div.container div.right .color::after {
+  content: "";
+  bottom: -3rem;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 0.1rem;
+  background: #000;
+}
+main section#detail div.container div.right div.rimg img:not(:last-of-type) {
+  padding-bottom: 1rem;
 }
 main section#detail div.container div.right div.name {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding-bottom: 4rem;
 }
 main section#detail div.container div.right div.name h2 {
-  font-size: 1.8rem;
+  position: relative;
+  font-size: 2.2rem;
+  padding-top: 4.5rem;
 }
 main section#detail div.container div.right div.name > div {
   display: flex;
   align-items: center;
   gap: 2rem;
+  padding-top: 2rem;
 }
 main section#detail div.container div.right div.name > div > span {
   background: #000;
@@ -733,7 +721,7 @@ main section#detail div.container div.right div.name > div > p {
   font-size: 1.8rem;
 }
 main section#detail div.container div.right div.ex p {
-  padding-bottom: 2rem;
+  padding: 4rem 0 8rem 0;
 }
 
 footer p {
@@ -741,17 +729,18 @@ footer p {
   text-align: center;
   font-size: 1.2rem;
   padding: 10rem 0 5rem 0;
+  font-family: "Montserrat";
 }
 
 @media screen and (max-width: 2560px) {
+  section#aboutme {
+    padding-top: 15rem;
+  }
   section#intro {
     height: 80rem;
   }
-  .li.txtp {
-    width: 50%;
-  }
   .abm {
-    gap: 8rem;
+    gap: 9rem;
   }
   .modal-content {
     padding: 7rem;
@@ -770,7 +759,7 @@ ul.change li:nth-child(2) h1 {
     padding: 0 12rem;
   }
   div.wrap {
-    padding: 0 6rem;
+    padding: 0 12rem;
   }
   section#detail > div.container > div {
     width: 50%;
@@ -804,8 +793,14 @@ ul.change li:nth-child(2) h1 {
   .abm {
     gap: 6rem;
   }
+  div.wrap {
+    padding: 0 6rem;
+  }
   .photo > img:nth-child(6) {
     display: none;
+  }
+  div.name {
+    flex-direction: column;
   }
 }
 @media screen and (max-width: 769px) {
@@ -832,18 +827,26 @@ ul.change li:nth-child(2) h1 {
     width: 100%;
   }
 }
+@media screen and (max-width: 550px) {
+  section#detail div.container {
+    flex-direction: column;
+  }
+  ul.lnb {
+    display: none;
+  }
+  .hambtn {
+    display: block;
+  }
+}
 @media screen and (max-width: 500px) {
+  section#aboutme {
+    padding-top: 10rem;
+  }
   div.container {
     padding: 0 4rem;
   }
   div.wrap {
     padding: 0 4rem;
-  }
-  header {
-    height: 9rem;
-  }
-  ul.lnb {
-    display: none;
   }
   .modal-content {
     padding: 2.5rem;
@@ -854,9 +857,6 @@ ul.change li:nth-child(2) h1 {
   }
   #intro {
     height: 62.4rem;
-  }
-  .hambtn {
-    display: block;
   }
   div.container > div > h1 {
     font-size: 6.6rem;

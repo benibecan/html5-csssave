@@ -9,6 +9,7 @@ li {
 }
 a {
     text-decoration: none;
+    color: #152692;
 }
 html {
     font-size: 62.5%;
@@ -61,40 +62,11 @@ header {
         padding: 2rem 1rem;
         cursor: pointer;
     }
-    .triangle {
-        width: 0px;
-        height: 0px;
-        border-top: 0.9rem solid #152692;
-        border-left: 0.6rem solid transparent;
-        border-right: 0.6rem solid transparent;
-        transition: 0.2s;
-    }
     .lnb > li:nth-child(2) {
         position: relative;
         display: flex;
         gap: 1rem;
         align-items: center;
-    }
-    .lnb > li:nth-child(2) .lnbm {
-        position: absolute;
-        top: 70%;
-        text-align: center;
-        left: 0;
-        transition: 0.1s;
-        visibility: hidden;
-    }
-    .lnb > li:nth-child(2) .lnbm a {
-        display: block;
-        padding: 1rem 0;
-    }
-    .lnb > li:nth-child(2):hover .lnbm,
-    .lnb > li:nth-child(2) .lnbm:hover {
-        visibility: visible;
-        top: 90%;
-    }
-    .lnb > li:nth-child(2):hover ul.triangle,
-    .lnb > li:nth-child(2) .lnbm:hover ul.triangle {
-        transform: rotate(180deg);
     }
 }
 .hambtn {
@@ -301,13 +273,13 @@ main {
     }
 
     section#aboutme {
-        padding-top: 10rem;
+        padding-bottom: 5rem;
         font-size: 1.8rem;
         margin: 0 auto;
         .abm {
             // background: blue;
             display: flex;
-            justify-content: center;
+            // justify-content: space-between;
             align-items: center;
             li.circle {
                 width: 41.9rem;
@@ -568,10 +540,10 @@ main {
         }
     }
     section#works {
-        margin-top: 10rem;
         width: 100%;
         height: 100%;
         div.container {
+            margin-top: 10rem;
             height: 100%;
             text-align: center;
             color: #152692;
@@ -600,11 +572,14 @@ main {
                 height: auto;
                 overflow: hidden;
                 background: #d9d9d9;
-            }
-            img {
-                max-width: 100%;
-                height: 100%;
-                object-fit: cover;
+                cursor: pointer;
+
+                img {
+                    display: block;
+                    max-width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
             }
             .box > li > ul > li:nth-child(2) {
                 position: absolute;
@@ -613,7 +588,6 @@ main {
                 z-index: 1;
                 display: none;
             }
-
             .box > li:hover > ul > li:nth-child(2) {
                 display: block;
             }
@@ -643,31 +617,50 @@ main {
         div.container {
             width: 100%;
             height: 100%;
-
+            display: flex;
+            gap: 4rem;
             div.left {
-                float: left;
                 height: 100%;
                 > img {
                     width: 100%;
-                    height: auto;
                 }
             }
+
             div.right {
-                float: right;
                 height: 100%;
+                .color {
+                    position: relative;
+                }
+                .color::after {
+                    content: '';
+                    bottom: -3rem;
+                    left: 0;
+                    position: absolute;
+                    width: 100%;
+                    height: 0.1rem;
+                    background: #000;
+                }
+
+                div.rimg {
+                    img:not(:last-of-type) {
+                        padding-bottom: 1rem;
+                    }
+                }
                 div.name {
                     display: flex;
                     justify-content: space-between;
-                    align-items: center;
-                    padding-bottom: 4rem;
+
                     h2 {
-                        font-size: 1.8rem;
+                        position: relative;
+                        font-size: 2.2rem;
+                        padding-top: 4.5rem;
                     }
 
                     > div {
                         display: flex;
                         align-items: center;
                         gap: 2rem;
+                        padding-top: 2rem;
 
                         > span {
                             background: #000;
@@ -688,7 +681,7 @@ main {
                 }
                 div.ex {
                     p {
-                        padding-bottom: 2rem;
+                        padding: 4rem 0 8rem 0;
                     }
                 }
             }
@@ -701,20 +694,20 @@ footer {
         text-align: center;
         font-size: 1.2rem;
         padding: 10rem 0 5rem 0;
+        font-family: 'Montserrat';
     }
 }
 
 // 미디어쿼리 데스크탑 우선
-// 1280
 @media screen and (max-width: 2560px) {
+    section#aboutme {
+        padding-top: 15rem;
+    }
     section#intro {
         height: 80rem;
     }
-    .li.txtp {
-        width: 50%;
-    }
     .abm {
-        gap: 8rem;
+        gap: 9rem;
     }
     .modal-content {
         padding: 7rem;
@@ -733,7 +726,7 @@ footer {
         padding: 0 12rem;
     }
     div.wrap {
-        padding: 0 6rem;
+        padding: 0 12rem;
     }
     section#detail > div.container > div {
         width: 50%;
@@ -768,8 +761,14 @@ footer {
     .abm {
         gap: 6rem;
     }
+    div.wrap {
+        padding: 0 6rem;
+    }
     .photo > img:nth-child(6) {
         display: none;
+    }
+    div.name {
+        flex-direction: column;
     }
 }
 @media screen and (max-width: 927px) {
@@ -800,21 +799,29 @@ footer {
         width: 100%;
     }
 }
-
+@media screen and (max-width: 550px) {
+    section#detail div.container {
+        flex-direction: column;
+    }
+    ul.lnb {
+        display: none;
+    }
+    .hambtn {
+        display: block;
+    }
+}
 // 대형 휴대기기
 @media screen and (max-width: 500px) {
+    section#aboutme {
+        padding-top: 10rem;
+    }
     div.container {
         padding: 0 4rem;
     }
     div.wrap {
         padding: 0 4rem;
     }
-    header {
-        height: 9rem;
-    }
-    ul.lnb {
-        display: none;
-    }
+
     .modal-content {
         padding: 2.5rem;
     }
@@ -825,9 +832,7 @@ footer {
     #intro {
         height: 62.4rem;
     }
-    .hambtn {
-        display: block;
-    }
+
     div.container > div > h1 {
         font-size: 6.6rem;
     }
