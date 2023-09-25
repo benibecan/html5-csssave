@@ -22,7 +22,6 @@ html {
 }
 
 body {
-  height: 100vh;
   font-size: 1.4rem;
   background: #f9f8f7;
 }
@@ -36,6 +35,16 @@ div.wrap {
   height: 100%;
 }
 
+::-moz-selection {
+  background: #152692;
+  color: #fff;
+}
+
+::selection {
+  background: #152692;
+  color: #fff;
+}
+
 header {
   position: fixed;
   left: 0;
@@ -47,9 +56,6 @@ header {
   font-family: "Montserrat";
   font-size: 1.8rem;
   z-index: 999;
-}
-header a {
-  color: #152692;
 }
 header .gnb {
   width: 100%;
@@ -299,19 +305,27 @@ main section#intro .scroll-down .arrow-down {
   }
 }
 main section#aboutme {
+  height: 100%;
   padding-bottom: 5rem;
   font-size: 1.8rem;
   margin: 0 auto;
 }
+main section#aboutme .container {
+  height: 100%;
+}
 main section#aboutme .abm {
+  width: 100%;
+  height: 100%;
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
 }
 main section#aboutme .abm li.circle {
-  width: 41.9rem;
+  float: left;
+  width: 100%;
   height: 41.9rem;
-  border-radius: 50%;
-  background: #ffc908;
+  border-radius: 3rem;
+  background: #d9d9d9;
 }
 main section#aboutme .abm li.circle h1 {
   position: absolute;
@@ -328,7 +342,7 @@ main section#aboutme .abm li.circle div:nth-of-type(1) > img {
   left: 50%;
   transform: translate(-50%, -50%);
   max-width: 90%;
-  height: auto;
+  height: 40rem;
   -o-object-fit: contain;
      object-fit: contain;
 }
@@ -348,20 +362,22 @@ main section#aboutme .abm li.circle:hover > div > img:nth-of-type(2) {
   opacity: 1;
 }
 main section#aboutme .abm li.txtp {
-  margin-top: 4rem;
+  float: right;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
 }
 main section#aboutme .abm li.txtp li {
   width: 100%;
   height: 100%;
 }
 main section#aboutme .abm li.txtp ul.txt {
-  width: 100%;
   height: 100%;
+  width: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 4rem;
 }
 main section#aboutme .abm li.txtp ul.txt ul > li {
   width: 100%;
@@ -371,11 +387,14 @@ main section#aboutme .abm li.txtp ul.txt ul > li p {
   width: 100%;
 }
 main section#aboutme .abm li.txtp ul.txt li.btn {
+  height: 100%;
+  width: auto;
   display: flex;
   flex-wrap: wrap;
   gap: 1.2rem;
 }
 main section#aboutme .abm li.txtp ul.txt li.btn button {
+  height: 5rem;
   font-size: 1.4rem;
   background: #000;
   color: #fff;
@@ -383,11 +402,13 @@ main section#aboutme .abm li.txtp ul.txt li.btn button {
   border-radius: 99.9rem;
   border: none;
   line-height: 3rem;
-  cursor: pointer;
 }
 main section#aboutme .abm li.txtp ul.txt li.btn button span {
   display: inline-block;
   line-height: 1rem;
+}
+main section#aboutme .abm li.txtp ul.txt li.btn button:not(:nth-of-type(2)) {
+  cursor: pointer;
 }
 main section#aboutme .abm li.txtp ul.txt li.btn button:hover {
   background: #152692;
@@ -426,6 +447,41 @@ main section#aboutme .abm li.txtp ul.txt li.btn button:hover > span {
     transform: rotate(0);
     scale: 1;
   }
+}
+main section#aboutme button.email {
+  position: relative;
+}
+main section#aboutme .ebubble {
+  position: absolute;
+  display: none;
+  bottom: 0;
+  right: 0.5rem;
+  z-index: 1;
+}
+main section#aboutme .ebubble .triangle {
+  position: absolute;
+  z-index: 2;
+  top: -0.7rem;
+  right: 3.5rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.4rem;
+  background-color: white;
+  box-shadow: -0.2rem 0.2rem rgba(178, 178, 178, 0.3);
+  transform: rotate(135deg);
+}
+main section#aboutme .ebubble .ebt {
+  position: absolute;
+  top: 0.2rem;
+  right: -3rem;
+  border-radius: 999rem;
+  padding: 0 2rem;
+  background: #fff;
+  box-shadow: 0rem 0rem 0.2rem 0.1rem rgba(178, 178, 178, 0.3);
+  font-size: 1.3rem;
+  color: #000;
+  line-height: 4rem;
+  z-index: 1;
 }
 @-webkit-keyframes modalup {
   0% {
@@ -545,23 +601,23 @@ main .modal .modal-content .photo img {
   transition: 1s;
 }
 main .modal .modal-content .photo > img:nth-child(1) {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 25%;
+  left: 30%;
   z-index: 10;
 }
 main .modal .modal-content .photo > img:nth-child(2) {
-  top: 0;
-  right: 5%;
+  top: 30%;
+  right: 20%;
   z-index: 9;
+  transform: translate(0, -50%);
 }
 main .modal .modal-content .photo > img:nth-child(3) {
   top: 5%;
-  left: 0%;
+  left: 10%;
 }
 main .modal .modal-content .photo > img:nth-child(4) {
   bottom: 0%;
-  left: 0%;
+  left: 5%;
   transform: scaleX(-1) scale(0.8);
 }
 main .modal .modal-content .photo > img:nth-child(5) {
@@ -570,75 +626,80 @@ main .modal .modal-content .photo > img:nth-child(5) {
   transform: scale(0.8);
 }
 main .modal .modal-content .photo > img:nth-child(6) {
-  bottom: 10%;
-  right: 30%;
+  bottom: 3%;
+  right: 40%;
   z-index: 1;
 }
 main .modal .modal-content .photo > img:nth-child(7) {
   top: 50%;
   left: 0%;
-  transform: translateY(-50%);
+  transform: translate(50%, -50%);
 }
 main .modal .modal-content .photo > img:nth-child(8) {
-  bottom: 10%;
-  right: 0;
-  transform: translateY(-50%);
+  bottom: 20%;
+  right: 10%;
+  transform: translate(50%, -50%);
 }
-main section#works {
+main .modal .modal-content .photo > img:hover {
+  z-index: 555;
+  transform: scale(1.1);
+}
+
+section#works {
   width: 100%;
   height: 100%;
 }
-main section#works div.container {
+section#works div.container {
   margin-top: 10rem;
   height: 100%;
   text-align: center;
   color: #152692;
 }
-main section#works div.container div {
+section#works div.container div {
   width: 100%;
   margin-bottom: 12rem;
 }
-main section#works div.container div h1 {
+section#works div.container div h1 {
   display: inline-block;
   font-family: "Montserrat";
   font-weight: bold;
   text-align: center;
 }
-main section#works div.container div p {
+section#works div.container div p {
   font-family: "Montserrat";
   font-size: 1.8rem;
 }
-main section#works div.container ul.box {
+section#works div.container ul.box {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 12rem;
   gap: 0.2rem;
 }
-main section#works div.container .box li {
+section#works div.container .box li {
   position: relative;
   height: auto;
   overflow: hidden;
   background: #d9d9d9;
   cursor: pointer;
 }
-main section#works div.container .box li img {
+section#works div.container .box li img {
   display: block;
   max-width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-main section#works div.container .box > li > ul > li:nth-child(2) {
+section#works div.container .box > li > ul > li:nth-child(2) {
   position: absolute;
   left: 0;
   top: 0;
   z-index: 1;
   display: none;
 }
-main section#works div.container .box > li:hover > ul > li:nth-child(2) {
+section#works div.container .box > li:hover > ul > li:nth-child(2) {
   display: block;
 }
-main section#works div.container button {
+section#works div.container button {
   font-size: 18px;
   background: #000;
   color: #fff;
@@ -646,39 +707,40 @@ main section#works div.container button {
   border-radius: 99.9rem;
   border: none;
 }
-main section#works div.container button:hover {
+section#works div.container button:hover {
   background: #152692;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
-main section#detail {
+
+section#detail {
   margin-top: 10rem;
 }
-main section#detail img {
+section#detail img {
   display: block;
   width: 100%;
   height: auto;
   -o-object-fit: contain;
      object-fit: contain;
 }
-main section#detail div.container {
+section#detail div.container {
   width: 100%;
   height: 100%;
   display: flex;
   gap: 4rem;
 }
-main section#detail div.container div.left {
+section#detail div.container div.left {
   height: 100%;
 }
-main section#detail div.container div.left > img {
+section#detail div.container div.left > img {
   width: 100%;
 }
-main section#detail div.container div.right {
+section#detail div.container div.right {
   height: 100%;
 }
-main section#detail div.container div.right .color {
+section#detail div.container div.right .color {
   position: relative;
 }
-main section#detail div.container div.right .color::after {
+section#detail div.container div.right .color::after {
   content: "";
   bottom: -3rem;
   left: 0;
@@ -687,25 +749,25 @@ main section#detail div.container div.right .color::after {
   height: 0.1rem;
   background: #000;
 }
-main section#detail div.container div.right div.rimg img:not(:last-of-type) {
+section#detail div.container div.right div.rimg img:not(:last-of-type) {
   padding-bottom: 1rem;
 }
-main section#detail div.container div.right div.name {
+section#detail div.container div.right div.name {
   display: flex;
   justify-content: space-between;
 }
-main section#detail div.container div.right div.name h2 {
+section#detail div.container div.right div.name h2 {
   position: relative;
   font-size: 2.2rem;
   padding-top: 4.5rem;
 }
-main section#detail div.container div.right div.name > div {
+section#detail div.container div.right div.name > div {
   display: flex;
   align-items: center;
   gap: 2rem;
   padding-top: 2rem;
 }
-main section#detail div.container div.right div.name > div > span {
+section#detail div.container div.right div.name > div > span {
   background: #000;
   border-radius: 99.9rem;
   color: #fff;
@@ -713,14 +775,14 @@ main section#detail div.container div.right div.name > div > span {
   font-family: "Montserrat";
   font-size: 1.2rem;
 }
-main section#detail div.container div.right div.name > div span:hover {
+section#detail div.container div.right div.name > div span:hover {
   background: #152692;
 }
-main section#detail div.container div.right div.name > div > p {
+section#detail div.container div.right div.name > div > p {
   font-family: "Montserrat";
   font-size: 1.8rem;
 }
-main section#detail div.container div.right div.ex p {
+section#detail div.container div.right div.ex p {
   padding: 4rem 0 8rem 0;
 }
 
@@ -785,6 +847,26 @@ ul.change li:nth-child(2) h1 {
   .photo > img:nth-child(1) {
     width: 40%;
   }
+  .ham_bg {
+    display: none;
+  }
+  ul.txt {
+    flex-direction: row;
+  }
+  li.btn {
+    justify-content: flex-end;
+  }
+}
+@media screen and (max-width: 1280px) {
+  ul.txt {
+    flex-direction: column;
+  }
+  li.txtp {
+    margin-top: 4rem;
+  }
+  li.btn {
+    justify-content: flex-start;
+  }
 }
 @media screen and (max-width: 1024px) {
   div.container {
@@ -825,6 +907,9 @@ ul.change li:nth-child(2) h1 {
   }
   section#detail > div.container > div {
     width: 100%;
+  }
+  li.btn {
+    justify-content: flex-start;
   }
 }
 @media screen and (max-width: 550px) {

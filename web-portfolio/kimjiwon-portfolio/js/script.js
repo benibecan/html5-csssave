@@ -81,3 +81,19 @@ $(function () {
 //         window.open(url);
 //     });
 // });
+
+// aboutem 똑똑 호버 말풍선
+$(document).ready(function () {
+    $('.email').mouseover(function () {
+        $('.ebubble').css('display', 'block');
+    });
+    $('.email').mouseout(function () {
+        $('.ebubble').css('display', 'none');
+    });
+    $('.ebubble').mouseover(function () {
+        $('.ebubble').css('display', 'block');
+    });
+    $('.ebubble').mouseout(function () {
+        $('.ebubble').css('display', 'none');
+    });
+});

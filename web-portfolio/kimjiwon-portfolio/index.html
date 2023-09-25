@@ -121,34 +121,32 @@
                         <!-- 자기소개 -->
                         <li class="txtp" data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-in-sine">
                             <ul class="txt">
-                                <li>About Me</li>
                                 <li>
-                                    <ul>
+                                    <ul
+                                        style="
+                                            display: flex;
+                                            flex-direction: column;
+                                            justify-content: space-around;
+                                            height: 100%;
+                                            align-items: center;
+                                        "
+                                    >
                                         <li>
-                                            <p>안녕하세요, 웹퍼블리셔 김지원입니다.</p>
+                                            <p>안녕하세요, 함께 성장하고 싶은 웹퍼블리셔 김지원입니다.</p>
 
-                                            <p>좋아하면 더 잘한다는 마음으로 디자인과 퍼블리싱을 하고 있습니다.</p>
+                                            <p>머리는 차갑게 마음은 뜨겁게, 따로 또 같이 디자인과 퍼블리싱합니다.</p>
                                         </li>
                                         <li>
-                                            <p>
-                                                기본적인 웹 퍼블리싱을 다룹니다. HTML/CSS/JAVA Script/Jqeury 언어를 할
-                                                수 있어요.
-                                            </p>
-                                            <p>어디에서도 잘 보이는 반응형, 웹 표준을 고려한 웹 페이지를 그려냅니다.</p>
+                                            <p>HTML / CSS / JavaScript / jQeury의 기초를 탄탄하게 다져왔어요.</p>
+                                            <p>어디서든 열리는 반응형 웹을 제작합니다.</p>
                                         </li>
                                         <li>
-                                            <p>
-                                                편리한 웹 디자인을 합니다. Photoshop/Illustration/Figma 등 을 다룰 수
-                                                있어요.
-                                            </p>
-                                            <p>형태와 색을 가지고 논다는 마음으로, 설레이는 마음으로 디자인을합니다.</p>
+                                            <p>Photoshop / Illustration / Figma 와 같은 디자인 툴을 다룰 수 있어요.</p>
+                                            <p>심미적이고 누구나 편리하게 사용할 수 있는 웹을 디자인합니다.</p>
                                         </li>
                                         <li>
-                                            <p>
-                                                맡은 프로젝트의 목적을 우선적으로 고려하며, 원활한 협업을 중요하게
-                                                생각해요.
-                                            </p>
-                                            <p>다양한 직군과 함께 멋지고 즐거운 웹을 만드는 데 관심이 많습니다.</p>
+                                            <p>목표를 우선으로 책임감을 갖고 일합니다.</p>
+                                            <p>다양한 분야의 웹을 만드는 데 관심이 많습니다.</p>
                                         </li>
                                     </ul>
                                 </li>
@@ -172,13 +170,22 @@
                                             이력서 받아보기 <span>&#127793;</span>
                                         </button></a
                                     >
-                                    <a
-                                        href="mailto:benibecan@naver.com"
-                                        data-aos-offset="-100"
-                                        data-aos="fade-right"
-                                        data-aos-delay="500"
-                                        ><button class="email" type="button">똑똑 <span>&#128236;</span></button></a
-                                    >
+                                    <div style="position: relative">
+                                        <button
+                                            class="email"
+                                            type="button"
+                                            data-aos-offset="-100"
+                                            data-aos="fade-right"
+                                            data-aos-delay="500"
+                                        >
+                                            <p style="float: left">똑똑</p>
+                                            <span>&#128236;</span>
+                                        </button>
+                                        <div class="ebubble">
+                                            <div class="triangle"></div>
+                                            <span class="ebt">benibecan@naver.com</span>
+                                        </div>
+                                    </div>
                                 </li>
                                 <div class="btnup">
                                     <div class="black"></div>
@@ -207,7 +214,7 @@
                         <label><input type="radio" name="tag" class="LI" /> LIKE</label>
                     </div>
                     <div class="photo">
-                        <img src="images/baby.png" alt="" class="BACKGROUND" value="ALL" />
+                        <img style="position: relative" src="images/baby.png" alt="" class="BACKGROUND" value="ALL" />
                         <img src="images/pohang.png" alt="" class="BACKGROUND" value="ALL" />
                         <img src="images/sanghai.png" alt="" class="LIKE" />
                         <img src="images/camera.png" alt="" class="LIKE" />
