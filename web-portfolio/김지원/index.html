@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1" />
+        <!-- 스타일 -->
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/webfonts.css" />
+        <!-- 스크립트 -->
+        <script src="js/jquery-3.7.1.min.js"></script>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+        <script src="js/script.js"></script>
+        <!-- 슬라이드 스와이퍼 -->
+        <script src="js/swiper-bundle.js"></script>
+        <link rel="stylesheet" href="css/swaper-bundle.css" />
+        <!-- aos -->
+        <script src="js/aos.js"></script>
+        <link rel="stylesheet" href="css/aos.css" />
+        <!-- 구글 아이콘 -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+        <!-- 파비콘 추가 -->
+        <link rel="shortcut icon" href="images/favicon/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
+        <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="/manifest" href="images/favicon/" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+        <meta name="theme-color" content="#ffffff" />
+        <title>JIWON | Web Portfolio</title>
+    </head>
+    <body>
+        <header>
+            <div class="wrap">
+                <ul class="gnb">
+                    <li data-aos="fade-right" data-aos-duration="1000"><strong>JIWON Web Portfolio</strong></li>
+                    <li>
+                        <ul class="lnb">
+                            <li><a href="#aboutme">About Me</a></li>
+                            <li>
+                                <a href="#works">Works</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="hambtn"><span class="material-icons" style="font-size: 4.8rem">menu</span></li>
+                </ul>
+            </div>
+            <div class="ham_bg">
+                <ul class="hambox rightm">
+                    <span class="hamclose material-icons" style="font-size: 4.8rem">close</span>
+                    <li><a href="#aboutme">ABOUT ME</a></li>
+                    <li>
+                        <a href="#works">WORKS</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <main>
+            <!-- 인트로 -->
+            <section id="intro">
+                <div class="container">
+                    <ul class="change">
+                        <li>
+                            <h1
+                                data-aos="fade-up"
+                                data-aos-anchor="#example-anchor"
+                                data-aos-offset="500"
+                                data-aos-duration="1000"
+                            >
+                                Hello<br />I’m Jiwon
+                            </h1>
+                        </li>
+                        <li>
+                            <h1>
+                                Hello
+                                <br />
+                                I’m Jiwon
+                            </h1>
+                        </li>
+                        <li><img src="images/moon.png" alt="" /></li>
+                    </ul>
+                    <!-- 마우스 스크롤 애니메이션 -->
+                    <a href="#" class="scroll-down">
+                        <div class="scroll">
+                            <span class="scroll-dot"></span>
+                        </div>
+                        <div class="arrow-down"></div>
+                    </a>
+                </div>
+            </section>
+            <!-- 어바웃미 -->
+            <section id="aboutme">
+                <div class="container">
+                    <ul class="abm">
+                        <!-- 이모지 프로필 -->
+                        <li class="circle" data-aos="fade-up" data-aos-offset="200" data-aos-easing="ease-in-sine">
+                            <div><img src="images/photo_1.png" alt="" /><img src="images/photo_2.png" alt="" /></div>
+                            <div></div>
+                            <h1>
+                                i do what<br />
+
+                                i like
+                            </h1>
+                        </li>
+                        <!-- 자기소개 -->
+                        <li class="txtp" data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-in-sine">
+                            <ul class="txt">
+                                <li>
+                                    <ul
+                                        style="
+                                            display: flex;
+                                            flex-direction: column;
+                                            justify-content: space-around;
+                                            height: 100%;
+                                            align-items: center;
+                                        "
+                                    >
+                                        <li>
+                                            <p>안녕하세요, 함께 성장하고 싶은 웹퍼블리셔 김지원입니다.</p>
+
+                                            <p>머리는 차갑게 마음은 뜨겁게, 따로 또 같이 디자인과 퍼블리싱합니다.</p>
+                                        </li>
+                                        <li>
+                                            <p>HTML / CSS / JavaScript / jQeury의 기초를 탄탄하게 다져왔어요.</p>
+                                            <p>어디서든 열리는 반응형 웹을 제작합니다.</p>
+                                        </li>
+                                        <li>
+                                            <p>Photoshop / Illustration / Figma 와 같은 디자인 툴을 다룰 수 있어요.</p>
+                                            <p>심미적이고 누구나 편리하게 사용할 수 있는 웹을 디자인합니다.</p>
+                                        </li>
+                                        <li>
+                                            <p>목표를 우선으로 책임감을 갖고 일합니다.</p>
+                                            <p>다양한 분야의 웹을 만드는 데 관심이 많습니다.</p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="btn">
+                                    <button
+                                        class="hi"
+                                        type="button"
+                                        data-aos-offset="-100"
+                                        data-aos="fade-right"
+                                        data-aos-delay="100"
+                                    >
+                                        만나서 반가워요 ! <span>&#128075;</span>
+                                    </button>
+                                    <a
+                                        href="https://drive.google.com/file/d/1Gz7GUJCM7tQup7pj0jPS73kfWzNpP4Je/view?usp=sharing"
+                                        target="_blank"
+                                        data-aos-offset="-100"
+                                        data-aos="fade-right"
+                                        data-aos-delay="300"
+                                        ><button class="job" type="button">
+                                            이력서 받아보기 <span>&#127793;</span>
+                                        </button></a
+                                    >
+                                    <div style="position: relative">
+                                        <button
+                                            class="email"
+                                            type="button"
+                                            data-aos-offset="-100"
+                                            data-aos="fade-right"
+                                            data-aos-delay="500"
+                                        >
+                                            <p style="float: left">똑똑</p>
+                                            <span>&#128236;</span>
+                                        </button>
+                                        <div class="ebubble">
+                                            <div class="triangle"></div>
+                                            <span class="ebt">benibecan@naver.com</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <div class="btnup">
+                                    <div class="black"></div>
+                                    <div class="hi"></div>
+                                </div>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <!-- 모달 -->
+            <div id="himodal" class="modal">
+                <!-- 모달 콘텐츠 -->
+                <div class="modal-content">
+                    <div class="close" onClick="close_pop();">
+                        <span class="pop_bt">
+                            <span class="bar1"></span>
+                            <span class="bar2"></span>
+                        </span>
+                    </div>
+                    <h1>저는 이런 사람이에요</h1>
+                    <br />
+                    <div class="labels">
+                        <label><input type="radio" name="tag" checked class="AL" />ALL</label>
+                        <label><input type="radio" name="tag" checked class="BACK" />BACKGROUND</label>
+                        <label><input type="radio" name="tag" class="LI" /> LIKE</label>
+                    </div>
+                    <div class="photo">
+                        <img style="position: relative" src="images/baby.png" alt="" class="BACKGROUND" value="ALL" />
+                        <img src="images/pohang.png" alt="" class="BACKGROUND" value="ALL" />
+                        <img src="images/sanghai.png" alt="" class="LIKE" />
+                        <img src="images/camera.png" alt="" class="LIKE" />
+                        <img src="images/gumamoto.png" alt="" class="LIKE" />
+                        <img src="images/osaka.png" alt="" class="LIKE" />
+                        <img src="images/food.png" alt="" class="LIKE" />
+                        <img src="images/baking.png" alt="" class="LIKE" />
+                    </div>
+                </div>
+            </div>
+            <!-- 웹 -->
+            <section id="works">
+                <div class="container">
+                    <div>
+                        <h1 data-aos="fade-up" data-aos-offset="200" data-aos-duration="500">WORKS</h1>
+                        <p data-aos="fade-right" data-aos-duration="1300">What do I made?</p>
+                    </div>
+                    <ul class="box">
+                        <li class="aesop">
+                            <ul>
+                                <li><img src="images/aesop-cover.jpg" alt="" /></li>
+                                <li><img src="images/aesop-cover2.jpg" alt="" /></li>
+                            </ul>
+                        </li>
+                        <li class="djcentum">
+                            <ul>
+                                <li><img src="images/djcentum-cover.png" alt="" /></li>
+                                <li><img src="images/djcentum-cover2.png" alt="" /></li>
+                            </ul>
+                        </li>
+                        <li class="pohang">
+                            <ul>
+                                <li><img src="images/pohang-cover.png" alt="" /></li>
+                                <li><img src="images/pohang-cover2.png" alt="" /></li>
+                            </ul>
+                        </li>
+                        <li class="samyang">
+                            <ul>
+                                <li><img src="images/samyang-cover.png" alt="" /></li>
+                                <li><img src="images/samyang-cover2.png" alt="" /></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <ul>
+                                <li><img src="images/photo_1.png" alt="" /></li>
+                                <li><img src="images/photo_2.png" alt="" /></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li><img src="images/photo_1.png" alt="" /></li>
+                                <li><img src="images/photo_2.png" alt="" /></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li><img src="images/photo_1.png" alt="" /></li>
+                                <li><img src="images/photo_2.png" alt="" /></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li><img src="images/photo_1.png" alt="" /></li>
+                                <li><img src="images/photo_2.png" alt="" /></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li><img src="images/photo_1.png" alt="" /></li>
+                                <li><img src="images/photo_2.png" alt="" /></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <button type="button">Load more</button>
+                </div>
+            </section>
+        </main>
+        <footer><p>©jiwon.kim</p></footer>
+        <script>
+            AOS.init();
+        </script>
+    </body>
+</html>
