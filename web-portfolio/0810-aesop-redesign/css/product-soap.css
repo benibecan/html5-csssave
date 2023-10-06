@@ -265,7 +265,7 @@ section.second {
     display: flex;
     align-items: center;
     margin: 0 auto;
-    background: url(./images/second/photo11.jpg) no-repeat;
+    background: url(../images/second/photo11.jpg) no-repeat;
     background-size: cover;
     background-position: 50%;
     max-width: auto;
