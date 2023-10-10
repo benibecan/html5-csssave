@@ -84,3 +84,9 @@
     font-weight: 500;
     font-display: swap;
 }
+@font-face {
+    font-family: 'Patihan';
+    src: url('../webfonts/Patihan-SlabMedium.woff') format('woff');
+    font-weight: 500;
+    font-display: swap;
+}
