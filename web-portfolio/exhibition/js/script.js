@@ -233,6 +233,10 @@ $(document).ready(function () {
 $(function () {
     $('.num1 img').click(function () {
         url = '/exhibition/gallery.html';
-        window.open(url);
+        window.open(url, '_self');
+    });
+    $('.logo img').click(function () {
+        url = '/exhibition/index.html';
+        window.open(url, '_self');
     });
 });
