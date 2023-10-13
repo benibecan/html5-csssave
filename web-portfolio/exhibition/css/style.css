@@ -5,6 +5,16 @@
   box-sizing: border-box;
 }
 
+::-moz-selection {
+  background: #000;
+  color: #fff;
+}
+
+::selection {
+  background: #000;
+  color: #fff;
+}
+
 ul,
 li {
   list-style: none;
@@ -215,7 +225,7 @@ html {
   cursor: pointer;
   margin-top: 20px;
 }
-#wrap #container .main .bottom div.footer {
+#wrap div.footer {
   width: 100%;
   height: 40px;
   background: #fff;
@@ -225,6 +235,7 @@ html {
   font-size: 12px;
 }
 
+/*calendar*/
 #calendar {
   position: fixed;
   z-index: 999;
@@ -333,83 +344,107 @@ i[class^=icon-chevron] {
 }
 
 /*sub*/
-.top2 {
+.maininner {
   width: 100%;
-  min-height: 1800px;
-  height: 100%;
+  height: auto;
   border-top: 1px solid #ccc;
+  padding-top: 40px;
 }
-.top2 .blan {
-  width: 100%;
-  border-bottom: 1px solid #eee;
-}
-.top2 .text {
-  width: 100%;
-  height: 250px;
-  margin-top: 50px;
-  line-height: 1.5;
-  letter-spacing: 0;
-}
-.top2 .text h1 {
+.maininner .toptext .title {
   margin-bottom: 10px;
 }
-.top2 .text > p {
+.maininner .toptext p {
   position: relative;
-  padding-right: 10px;
   color: #787878;
-  font-size: 14px;
-  margin-left: 10px;
-  margin-bottom: 30px;
 }
-.top2 .text > p:nth-of-type(1):before {
-  content: "";
+.maininner .toptext p::before {
   position: absolute;
-  width: 3px;
-  height: 3px;
-  top: 45%;
-  left: -5px;
-  background: #111;
-}
-.top2 .text > p:nth-of-type(2) {
-  padding-left: 100px;
-}
-.top2 .text > p:nth-of-type(2):before {
   content: "";
-  position: absolute;
-  width: 3px;
-  height: 3px;
-  top: 45%;
-  left: 99px;
-  background: #111;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 4px;
+  background: #787878;
 }
-.top2 .text .story {
-  width: 100%;
-  min-width: 500px;
-  display: flex;
-  gap: 20px;
+.maininner .toptext p:nth-of-type(1) {
+  position: relative;
+  float: left;
+  margin-right: 20px;
 }
-.top2 .text .story span {
-  display: block;
-  color: #555;
-}
-.top2 .top-photo {
+.maininner .topphoto {
   width: 100%;
   height: 600px;
-  margin: 40px 0;
+  margin: 40px auto;
+  overflow: hidden;
+  border-radius: 10px;
 }
-.top2 .top-photo img {
+.maininner .topphoto img {
   width: 100%;
   height: 100%;
-  border-radius: 10px;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  transform: scale(1.5);
 }
-.top2 .select {
+.maininner .caption {
   width: 100%;
-  height: 100%;
-  margin: 0 auto;
+  height: auto;
+  margin: 40px auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
 }
-.top2 .select ul {
+.maininner .caption .caption-left {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 300px;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+}
+.maininner .caption .caption-left > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height: auto;
+  padding: 20px;
+}
+.maininner .caption .caption-left > div h1 {
+  position: relative;
+  line-height: 1;
+  font-family: "Empirica";
+  font-weight: 300;
+}
+.maininner .caption .caption-left > div h1::before, .maininner .caption .caption-left > div h1::after {
+  font-size: 48px;
+}
+.maininner .caption .caption-left > div h1::before {
+  content: "“";
+}
+.maininner .caption .caption-left > div h1::after {
+  position: absolute;
+  content: "”";
+}
+.maininner .caption .caption-left > div p {
+  color: #787878;
+  margin-top: 40px;
+}
+.maininner .caption .caption-right {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+}
+.maininner .caption .caption-right ul {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -417,14 +452,13 @@ i[class^=icon-chevron] {
   height: 300px;
   border: 1px solid #ccc;
   padding: 20px;
-  margin: 40px 0;
 }
-.top2 .select ul li {
+.maininner .caption .caption-right ul li {
   position: relative;
   display: flex;
   justify-content: space-between;
 }
-.top2 .select ul li:not(:last-child):after {
+.maininner .caption .caption-right ul li:not(:last-child):after {
   position: absolute;
   content: "";
   width: 100%;
@@ -433,13 +467,13 @@ i[class^=icon-chevron] {
   left: 0;
   background: #ccc;
 }
-.top2 .select ul li p {
+.maininner .caption .caption-right ul li p {
   padding: 0 5px;
 }
-.top2 .select div {
+.maininner .caption .caption-right .buttonwrap {
   text-align: center;
 }
-.top2 .select div button {
+.maininner .caption .caption-right .buttonwrap button {
   display: inline-block;
   width: 80%;
   height: 70px;
@@ -450,16 +484,86 @@ i[class^=icon-chevron] {
   cursor: pointer;
   font-size: 16px;
 }
-.top2 .select div button:hover {
+.maininner .caption .caption-right .buttonwrap button:hover {
   background: #000;
+}
+.maininner .maintext {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin: 80px 0;
+}
+
+.text span {
+  display: block;
+  letter-spacing: 0.3px;
+  line-height: 1.7;
+  color: #787878;
+}
+.text span:nth-child(1) {
+  margin-bottom: 20px;
+}
+
+.footer2 {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: #000;
+  text-align: center;
+  line-height: 40px;
+  color: #fff;
+  font-size: 12px;
+}
+
+.chapter1 {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.chapter1 .photo {
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.chapter1 .photo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 40%;
+     object-position: 50% 40%;
+}
+.chapter1 .text {
+  margin-bottom: 120px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+.chapter1 .text span {
+  flex-basis: 48%;
+  width: 100%;
+  margin: 0;
+}
+.chapter1 .text span strong {
+  font-size: 28px;
 }
 
 /*스마트폰 세로*/
 /*스마트폰 가로*/
 /*태블릿 세로*/
 @media screen and (max-width: 768px) {
-  .story {
-    flex-direction: grid;
+  .caption {
+    flex-direction: column;
+  }
+  .caption-right {
+    margin: 40px auto;
+  }
+  .chapter1 .text {
+    flex-direction: column;
   }
 }
 /*태블릿 가로, 데스크 톱*/
